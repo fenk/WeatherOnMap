@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B94F5B15163957FA00A5E3AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94F5B14163957FA00A5E3AB /* UIKit.framework */; };
+		B94F5B17163957FA00A5E3AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94F5B16163957FA00A5E3AB /* Foundation.framework */; };
+		B94F5B19163957FA00A5E3AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94F5B18163957FA00A5E3AB /* CoreGraphics.framework */; };
+		B94F5B1F163957FA00A5E3AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B94F5B1D163957FA00A5E3AB /* InfoPlist.strings */; };
+		B94F5B21163957FA00A5E3AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B94F5B20163957FA00A5E3AB /* main.m */; };
+		B94F5B25163957FA00A5E3AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B94F5B24163957FA00A5E3AB /* AppDelegate.m */; };
+		B94F5B27163957FA00A5E3AB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B94F5B26163957FA00A5E3AB /* Default.png */; };
+		B94F5B29163957FA00A5E3AB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B94F5B28163957FA00A5E3AB /* Default@2x.png */; };
+		B94F5B2B163957FA00A5E3AB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B94F5B2A163957FA00A5E3AB /* Default-568h@2x.png */; };
+		B94F5B381639588900A5E3AB /* WeatherOnMapService.m in Sources */ = {isa = PBXBuildFile; fileRef = B94F5B371639588900A5E3AB /* WeatherOnMapService.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B94F5B10163957FA00A5E3AB /* WeatherOnMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherOnMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B94F5B14163957FA00A5E3AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B94F5B16163957FA00A5E3AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B94F5B18163957FA00A5E3AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B94F5B1C163957FA00A5E3AB /* WeatherOnMap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeatherOnMap-Info.plist"; sourceTree = "<group>"; };
+		B94F5B1E163957FA00A5E3AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B94F5B20163957FA00A5E3AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B94F5B22163957FA00A5E3AB /* WeatherOnMap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherOnMap-Prefix.pch"; sourceTree = "<group>"; };
+		B94F5B23163957FA00A5E3AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B94F5B24163957FA00A5E3AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B94F5B26163957FA00A5E3AB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B94F5B28163957FA00A5E3AB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B94F5B2A163957FA00A5E3AB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B94F5B361639588900A5E3AB /* WeatherOnMapService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherOnMapService.h; path = ApiService/WeatherOnMapService.h; sourceTree = "<group>"; };
+		B94F5B371639588900A5E3AB /* WeatherOnMapService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherOnMapService.m; path = ApiService/WeatherOnMapService.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B94F5B0D163957FA00A5E3AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94F5B15163957FA00A5E3AB /* UIKit.framework in Frameworks */,
+				B94F5B17163957FA00A5E3AB /* Foundation.framework in Frameworks */,
+				B94F5B19163957FA00A5E3AB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B94F5B05163957FA00A5E3AB = {
+			isa = PBXGroup;
+			children = (
+				B94F5B1A163957FA00A5E3AB /* WeatherOnMap */,
+				B94F5B13163957FA00A5E3AB /* Frameworks */,
+				B94F5B11163957FA00A5E3AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B94F5B11163957FA00A5E3AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B94F5B10163957FA00A5E3AB /* WeatherOnMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B94F5B13163957FA00A5E3AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B94F5B14163957FA00A5E3AB /* UIKit.framework */,
+				B94F5B16163957FA00A5E3AB /* Foundation.framework */,
+				B94F5B18163957FA00A5E3AB /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B94F5B1A163957FA00A5E3AB /* WeatherOnMap */ = {
+			isa = PBXGroup;
+			children = (
+				B94F5B351639584000A5E3AB /* Views */,
+				B94F5B341639583900A5E3AB /* ViewControllers */,
+				B94F5B331639582D00A5E3AB /* Model */,
+				B94F5B321639582000A5E3AB /* DataCache */,
+				B94F5B311639581000A5E3AB /* ApiService */,
+				B94F5B23163957FA00A5E3AB /* AppDelegate.h */,
+				B94F5B24163957FA00A5E3AB /* AppDelegate.m */,
+				B94F5B1B163957FA00A5E3AB /* Supporting Files */,
+			);
+			path = WeatherOnMap;
+			sourceTree = "<group>";
+		};
+		B94F5B1B163957FA00A5E3AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B94F5B1C163957FA00A5E3AB /* WeatherOnMap-Info.plist */,
+				B94F5B1D163957FA00A5E3AB /* InfoPlist.strings */,
+				B94F5B20163957FA00A5E3AB /* main.m */,
+				B94F5B22163957FA00A5E3AB /* WeatherOnMap-Prefix.pch */,
+				B94F5B26163957FA00A5E3AB /* Default.png */,
+				B94F5B28163957FA00A5E3AB /* Default@2x.png */,
+				B94F5B2A163957FA00A5E3AB /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B94F5B311639581000A5E3AB /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				B94F5B361639588900A5E3AB /* WeatherOnMapService.h */,
+				B94F5B371639588900A5E3AB /* WeatherOnMapService.m */,
+			);
+			name = ApiService;
+			sourceTree = "<group>";
+		};
+		B94F5B321639582000A5E3AB /* DataCache */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataCache;
+			sourceTree = "<group>";
+		};
+		B94F5B331639582D00A5E3AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B94F5B341639583900A5E3AB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B94F5B351639584000A5E3AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B94F5B0F163957FA00A5E3AB /* WeatherOnMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B94F5B2E163957FA00A5E3AB /* Build configuration list for PBXNativeTarget "WeatherOnMap" */;
+			buildPhases = (
+				B94F5B0C163957FA00A5E3AB /* Sources */,
+				B94F5B0D163957FA00A5E3AB /* Frameworks */,
+				B94F5B0E163957FA00A5E3AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeatherOnMap;
+			productName = WeatherOnMap;
+			productReference = B94F5B10163957FA00A5E3AB /* WeatherOnMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B94F5B07163957FA00A5E3AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Jacek Grygiel";
+			};
+			buildConfigurationList = B94F5B0A163957FA00A5E3AB /* Build configuration list for PBXProject "WeatherOnMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B94F5B05163957FA00A5E3AB;
+			productRefGroup = B94F5B11163957FA00A5E3AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B94F5B0F163957FA00A5E3AB /* WeatherOnMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B94F5B0E163957FA00A5E3AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94F5B1F163957FA00A5E3AB /* InfoPlist.strings in Resources */,
+				B94F5B27163957FA00A5E3AB /* Default.png in Resources */,
+				B94F5B29163957FA00A5E3AB /* Default@2x.png in Resources */,
+				B94F5B2B163957FA00A5E3AB /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B94F5B0C163957FA00A5E3AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94F5B21163957FA00A5E3AB /* main.m in Sources */,
+				B94F5B25163957FA00A5E3AB /* AppDelegate.m in Sources */,
+				B94F5B381639588900A5E3AB /* WeatherOnMapService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B94F5B1D163957FA00A5E3AB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B94F5B1E163957FA00A5E3AB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B94F5B2C163957FA00A5E3AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B94F5B2D163957FA00A5E3AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B94F5B2F163957FA00A5E3AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeatherOnMap/WeatherOnMap-Prefix.pch";
+				INFOPLIST_FILE = "WeatherOnMap/WeatherOnMap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B94F5B30163957FA00A5E3AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeatherOnMap/WeatherOnMap-Prefix.pch";
+				INFOPLIST_FILE = "WeatherOnMap/WeatherOnMap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B94F5B0A163957FA00A5E3AB /* Build configuration list for PBXProject "WeatherOnMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B94F5B2C163957FA00A5E3AB /* Debug */,
+				B94F5B2D163957FA00A5E3AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B94F5B2E163957FA00A5E3AB /* Build configuration list for PBXNativeTarget "WeatherOnMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B94F5B2F163957FA00A5E3AB /* Debug */,
+				B94F5B30163957FA00A5E3AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B94F5B07163957FA00A5E3AB /* Project object */;
+}
