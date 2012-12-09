@@ -9,6 +9,11 @@
 #ifndef WeatherOnMap_Models_h
 #define WeatherOnMap_Models_h
 
-
+#import "BasicRequestModel.h"
+#import "BasicResponseModel.h"
+#import "WeatherRequestModel.h"
+#import "StationRequestModel.h"
+#import "WeatherResponseModel.h"
+#import "StationResponseModel.h"
 
 #endif

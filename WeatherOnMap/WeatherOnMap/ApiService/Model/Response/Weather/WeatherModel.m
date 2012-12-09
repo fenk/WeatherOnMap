@@ -10,4 +10,5 @@
 
 @implementation WeatherModel
 
+
 @end

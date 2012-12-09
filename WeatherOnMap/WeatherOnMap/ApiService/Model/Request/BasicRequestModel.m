@@ -9,5 +9,12 @@
 #import "BasicRequestModel.h"
 
 @implementation BasicRequestModel
+@synthesize latitude = _latitude;
+@synthesize longitude = _longitude;
+@synthesize resultCountExpected = _resultCountExpected;
 
+
+- (void)dealloc{
+    [super dealloc];
+}
 @end

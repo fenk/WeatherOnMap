@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeatherOnMapService.h"
+#import "Models.h"
 
-@interface BasicViewController : UIViewController
+@interface BasicViewController : UIViewController<WeatherOnMapServiceDelegate>
 
 @end

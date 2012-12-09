@@ -1,5 +1,5 @@
 //
-//  StationModel.h
+//  BasicModel.h
 //  WeatherOnMap
 //
 //  Created by Jacek Grygiel on 12/9/12.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StationModel : NSObject
+@interface BasicResponseModel : NSObject
 
 @end

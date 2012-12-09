@@ -9,5 +9,10 @@
 #import "ServiceHTTPRequest.h"
 
 @implementation ServiceHTTPRequest
-
+@synthesize requestModel = _requestModel;
+@synthesize caller = _caller;
+- (void)dealloc{
+    [self.requestModel release];
+    [super dealloc];
+}
 @end

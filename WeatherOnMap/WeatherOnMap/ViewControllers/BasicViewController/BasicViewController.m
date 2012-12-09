@@ -8,6 +8,7 @@
 
 #import "BasicViewController.h"
 
+
 @interface BasicViewController ()
 
 @end
@@ -23,6 +24,28 @@
     return self;
 }
 
+//lat	 latitude
+//lon	 longitude
+//cnt	 Limit the number of points in the selection
+//callback	 functionName for JSONP calback. http://en.wikipedia.org/wiki/JSONP
+//cluster	 Use server clustering of points. Possible values ​​are [yes, no]
+//lang	 Language [ru, en, de, fr, es, it] if is posible
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    WeatherRequestModel *weatherRequest = [[WeatherRequestModel alloc] init];
+    weatherRequest.latitude = 40.6;
+    weatherRequest.longitude = 10.5;
+    weatherRequest.resultCountExpected = 5;
+    [[WeatherOnMapService sharedInstance] getWeather:weatherRequest withCaller:self];
+    [weatherRequest release];
+    
+}
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,6 +56,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) didReceiveResponse:(BasicResponseModel*) basicResponse{
+    DebugLog(@"%@", basicResponse);
+}
+- (void) didReceiveError:(NSError*) error{
+    DebugLog(@"%@", error);
 }
 
 @end

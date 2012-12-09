@@ -7,6 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0503345D16751EDB00B7C7F4 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503345C16751EDB00B7C7F4 /* BasicViewController.m */; };
+		050334661675222900B7C7F4 /* BasicResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 050334611675222900B7C7F4 /* BasicResponseModel.m */; };
+		050334671675222900B7C7F4 /* StationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 050334631675222900B7C7F4 /* StationResponseModel.m */; };
+		050334681675222900B7C7F4 /* WeatherResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 050334651675222900B7C7F4 /* WeatherResponseModel.m */; };
+		0503346B1675224300B7C7F4 /* BasicRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503346A1675224300B7C7F4 /* BasicRequestModel.m */; };
+		0503346E167522C000B7C7F4 /* WeatherRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503346D167522C000B7C7F4 /* WeatherRequestModel.m */; };
+		05033471167522D000B7C7F4 /* StationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05033470167522D000B7C7F4 /* StationRequestModel.m */; };
+		0503347616753F4600B7C7F4 /* ParserResponseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503347516753F4600B7C7F4 /* ParserResponseService.m */; };
+		0503347A1675428800B7C7F4 /* ServiceHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 050334791675428700B7C7F4 /* ServiceHTTPRequest.m */; };
+		050334811675488E00B7C7F4 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 050334801675488E00B7C7F4 /* WeatherModel.m */; };
+		05033484167549DF00B7C7F4 /* WeatherConditionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05033483167549DF00B7C7F4 /* WeatherConditionModel.m */; };
+		05CFFC18166C2077002D344E /* NSDictionary+UrlEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC17166C2077002D344E /* NSDictionary+UrlEncoding.m */; };
+		05CFFCC8166C249F002D344E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC23166C249F002D344E /* ASIAuthenticationDialog.m */; };
+		05CFFCC9166C249F002D344E /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC26166C249F002D344E /* ASIDataCompressor.m */; };
+		05CFFCCA166C249F002D344E /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC28166C249F002D344E /* ASIDataDecompressor.m */; };
+		05CFFCCB166C249F002D344E /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC2A166C249F002D344E /* ASIDownloadCache.m */; };
+		05CFFCCC166C249F002D344E /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC2C166C249F002D344E /* ASIFormDataRequest.m */; };
+		05CFFCCD166C249F002D344E /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC2E166C249F002D344E /* ASIHTTPRequest.m */; };
+		05CFFCCE166C249F002D344E /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC32166C249F002D344E /* ASIInputStream.m */; };
+		05CFFCCF166C249F002D344E /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC34166C249F002D344E /* ASINetworkQueue.m */; };
+		05CFFCD0166C249F002D344E /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC38166C249F002D344E /* ASIWebPageRequest.m */; };
+		05CFFCEE166C249F002D344E /* README-GHUnit in Resources */ = {isa = PBXBuildFile; fileRef = 05CFFC77166C249F002D344E /* README-GHUnit */; };
+		05CFFCEF166C249F002D344E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFFC7A166C249F002D344E /* Reachability.m */; };
+		05CFFD22166C251F002D344E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CFFD21166C251F002D344E /* QuartzCore.framework */; };
+		05CFFD24166C2528002D344E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CFFD23166C2528002D344E /* CFNetwork.framework */; };
+		05CFFD28166C2552002D344E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CFFD25166C2552002D344E /* MobileCoreServices.framework */; };
+		05CFFD29166C2552002D344E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CFFD26166C2552002D344E /* Security.framework */; };
+		05CFFD2A166C2552002D344E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CFFD27166C2552002D344E /* SystemConfiguration.framework */; };
+		05CFFD2E166C25B1002D344E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CFFD2D166C25B1002D344E /* libz.dylib */; };
+		05CFFD36166C274A002D344E /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CFFD35166C274A002D344E /* libxml2.2.dylib */; };
 		B94F5B15163957FA00A5E3AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94F5B14163957FA00A5E3AB /* UIKit.framework */; };
 		B94F5B17163957FA00A5E3AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94F5B16163957FA00A5E3AB /* Foundation.framework */; };
 		B94F5B19163957FA00A5E3AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94F5B18163957FA00A5E3AB /* CoreGraphics.framework */; };
@@ -20,6 +50,64 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0503345B16751EDB00B7C7F4 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicViewController.h; path = ViewControllers/BasicViewController/BasicViewController.h; sourceTree = "<group>"; };
+		0503345C16751EDB00B7C7F4 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicViewController.m; path = ViewControllers/BasicViewController/BasicViewController.m; sourceTree = "<group>"; };
+		050334601675222900B7C7F4 /* BasicResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicResponseModel.h; sourceTree = "<group>"; };
+		050334611675222900B7C7F4 /* BasicResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicResponseModel.m; sourceTree = "<group>"; };
+		050334621675222900B7C7F4 /* StationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationResponseModel.h; sourceTree = "<group>"; };
+		050334631675222900B7C7F4 /* StationResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationResponseModel.m; sourceTree = "<group>"; };
+		050334641675222900B7C7F4 /* WeatherResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponseModel.h; sourceTree = "<group>"; };
+		050334651675222900B7C7F4 /* WeatherResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponseModel.m; sourceTree = "<group>"; };
+		050334691675224300B7C7F4 /* BasicRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicRequestModel.h; sourceTree = "<group>"; };
+		0503346A1675224300B7C7F4 /* BasicRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicRequestModel.m; sourceTree = "<group>"; };
+		0503346C167522C000B7C7F4 /* WeatherRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherRequestModel.h; sourceTree = "<group>"; };
+		0503346D167522C000B7C7F4 /* WeatherRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherRequestModel.m; sourceTree = "<group>"; };
+		0503346F167522D000B7C7F4 /* StationRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationRequestModel.h; sourceTree = "<group>"; };
+		05033470167522D000B7C7F4 /* StationRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationRequestModel.m; sourceTree = "<group>"; };
+		0503347216753BB800B7C7F4 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Config/Config.h; sourceTree = "<group>"; };
+		0503347416753F4500B7C7F4 /* ParserResponseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParserResponseService.h; path = ApiService/ParseService/ParserResponseService.h; sourceTree = "<group>"; };
+		0503347516753F4600B7C7F4 /* ParserResponseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserResponseService.m; path = ApiService/ParseService/ParserResponseService.m; sourceTree = "<group>"; };
+		050334781675428700B7C7F4 /* ServiceHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceHTTPRequest.h; path = ApiService/ServiceHTTPRequest.h; sourceTree = "<group>"; };
+		050334791675428700B7C7F4 /* ServiceHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceHTTPRequest.m; path = ApiService/ServiceHTTPRequest.m; sourceTree = "<group>"; };
+		0503347B167543F900B7C7F4 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Models.h; path = ApiService/Model/Models.h; sourceTree = "<group>"; };
+		0503347F1675488E00B7C7F4 /* WeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherModel.h; path = Weather/WeatherModel.h; sourceTree = "<group>"; };
+		050334801675488E00B7C7F4 /* WeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherModel.m; path = Weather/WeatherModel.m; sourceTree = "<group>"; };
+		05033482167549DE00B7C7F4 /* WeatherConditionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherConditionModel.h; path = Weather/WeatherConditionModel.h; sourceTree = "<group>"; };
+		05033483167549DF00B7C7F4 /* WeatherConditionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherConditionModel.m; path = Weather/WeatherConditionModel.m; sourceTree = "<group>"; };
+		05CFFC16166C2077002D344E /* NSDictionary+UrlEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+UrlEncoding.h"; path = "Helper/NSDictionary+UrlEncoding.h"; sourceTree = "<group>"; };
+		05CFFC17166C2077002D344E /* NSDictionary+UrlEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+UrlEncoding.m"; path = "Helper/NSDictionary+UrlEncoding.m"; sourceTree = "<group>"; };
+		05CFFC22166C249F002D344E /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		05CFFC23166C249F002D344E /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		05CFFC24166C249F002D344E /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		05CFFC25166C249F002D344E /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		05CFFC26166C249F002D344E /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		05CFFC27166C249F002D344E /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		05CFFC28166C249F002D344E /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		05CFFC29166C249F002D344E /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		05CFFC2A166C249F002D344E /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		05CFFC2B166C249F002D344E /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		05CFFC2C166C249F002D344E /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		05CFFC2D166C249F002D344E /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		05CFFC2E166C249F002D344E /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		05CFFC2F166C249F002D344E /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		05CFFC30166C249F002D344E /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		05CFFC31166C249F002D344E /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		05CFFC32166C249F002D344E /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		05CFFC33166C249F002D344E /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		05CFFC34166C249F002D344E /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		05CFFC35166C249F002D344E /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		05CFFC37166C249F002D344E /* ASIWebPageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIWebPageRequest.h; sourceTree = "<group>"; };
+		05CFFC38166C249F002D344E /* ASIWebPageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIWebPageRequest.m; sourceTree = "<group>"; };
+		05CFFC77166C249F002D344E /* README-GHUnit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README-GHUnit"; sourceTree = "<group>"; };
+		05CFFC79166C249F002D344E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		05CFFC7A166C249F002D344E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		05CFFD21166C251F002D344E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		05CFFD23166C2528002D344E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		05CFFD25166C2552002D344E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		05CFFD26166C2552002D344E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		05CFFD27166C2552002D344E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		05CFFD2D166C25B1002D344E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		05CFFD35166C274A002D344E /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		B94F5B10163957FA00A5E3AB /* WeatherOnMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherOnMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94F5B14163957FA00A5E3AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B94F5B16163957FA00A5E3AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,6 +130,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05CFFD36166C274A002D344E /* libxml2.2.dylib in Frameworks */,
+				05CFFD2E166C25B1002D344E /* libz.dylib in Frameworks */,
+				05CFFD28166C2552002D344E /* MobileCoreServices.framework in Frameworks */,
+				05CFFD29166C2552002D344E /* Security.framework in Frameworks */,
+				05CFFD2A166C2552002D344E /* SystemConfiguration.framework in Frameworks */,
+				05CFFD24166C2528002D344E /* CFNetwork.framework in Frameworks */,
+				05CFFD22166C251F002D344E /* QuartzCore.framework in Frameworks */,
 				B94F5B15163957FA00A5E3AB /* UIKit.framework in Frameworks */,
 				B94F5B17163957FA00A5E3AB /* Foundation.framework in Frameworks */,
 				B94F5B19163957FA00A5E3AB /* CoreGraphics.framework in Frameworks */,
@@ -51,9 +146,175 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0503345A16751EAB00B7C7F4 /* BasicViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0503345B16751EDB00B7C7F4 /* BasicViewController.h */,
+				0503345C16751EDB00B7C7F4 /* BasicViewController.m */,
+			);
+			name = BasicViewController;
+			sourceTree = "<group>";
+		};
+		0503345E1675222200B7C7F4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				050334691675224300B7C7F4 /* BasicRequestModel.h */,
+				0503346A1675224300B7C7F4 /* BasicRequestModel.m */,
+				0503346C167522C000B7C7F4 /* WeatherRequestModel.h */,
+				0503346D167522C000B7C7F4 /* WeatherRequestModel.m */,
+				0503346F167522D000B7C7F4 /* StationRequestModel.h */,
+				05033470167522D000B7C7F4 /* StationRequestModel.m */,
+			);
+			name = Request;
+			path = ApiService/Model/Request;
+			sourceTree = "<group>";
+		};
+		0503345F1675222900B7C7F4 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				0503347D1675482E00B7C7F4 /* Station */,
+				0503347C1675482000B7C7F4 /* Weather */,
+				050334601675222900B7C7F4 /* BasicResponseModel.h */,
+				050334611675222900B7C7F4 /* BasicResponseModel.m */,
+			);
+			name = Response;
+			path = ApiService/Model/Response;
+			sourceTree = "<group>";
+		};
+		0503347316753BBC00B7C7F4 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				0503347216753BB800B7C7F4 /* Config.h */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		0503347716753F4B00B7C7F4 /* ParseService */ = {
+			isa = PBXGroup;
+			children = (
+				0503347416753F4500B7C7F4 /* ParserResponseService.h */,
+				0503347516753F4600B7C7F4 /* ParserResponseService.m */,
+			);
+			name = ParseService;
+			sourceTree = "<group>";
+		};
+		0503347C1675482000B7C7F4 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				050334641675222900B7C7F4 /* WeatherResponseModel.h */,
+				050334651675222900B7C7F4 /* WeatherResponseModel.m */,
+				0503347F1675488E00B7C7F4 /* WeatherModel.h */,
+				050334801675488E00B7C7F4 /* WeatherModel.m */,
+				05033482167549DE00B7C7F4 /* WeatherConditionModel.h */,
+				05033483167549DF00B7C7F4 /* WeatherConditionModel.m */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		0503347D1675482E00B7C7F4 /* Station */ = {
+			isa = PBXGroup;
+			children = (
+				050334621675222900B7C7F4 /* StationResponseModel.h */,
+				050334631675222900B7C7F4 /* StationResponseModel.m */,
+			);
+			name = Station;
+			sourceTree = "<group>";
+		};
+		05CFFC14166C2047002D344E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				05CFFC16166C2077002D344E /* NSDictionary+UrlEncoding.h */,
+				05CFFC17166C2077002D344E /* NSDictionary+UrlEncoding.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		05CFFC19166C2467002D344E /* External */ = {
+			isa = PBXGroup;
+			children = (
+				05CFFC1A166C249F002D344E /* asi-http-request */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		05CFFC1A166C249F002D344E /* asi-http-request */ = {
+			isa = PBXGroup;
+			children = (
+				05CFFC21166C249F002D344E /* Classes */,
+				05CFFC75166C249F002D344E /* External */,
+			);
+			name = "asi-http-request";
+			path = "../../lib/asi-http-request";
+			sourceTree = "<group>";
+		};
+		05CFFC21166C249F002D344E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				05CFFC22166C249F002D344E /* ASIAuthenticationDialog.h */,
+				05CFFC23166C249F002D344E /* ASIAuthenticationDialog.m */,
+				05CFFC24166C249F002D344E /* ASICacheDelegate.h */,
+				05CFFC25166C249F002D344E /* ASIDataCompressor.h */,
+				05CFFC26166C249F002D344E /* ASIDataCompressor.m */,
+				05CFFC27166C249F002D344E /* ASIDataDecompressor.h */,
+				05CFFC28166C249F002D344E /* ASIDataDecompressor.m */,
+				05CFFC29166C249F002D344E /* ASIDownloadCache.h */,
+				05CFFC2A166C249F002D344E /* ASIDownloadCache.m */,
+				05CFFC2B166C249F002D344E /* ASIFormDataRequest.h */,
+				05CFFC2C166C249F002D344E /* ASIFormDataRequest.m */,
+				05CFFC2D166C249F002D344E /* ASIHTTPRequest.h */,
+				05CFFC2E166C249F002D344E /* ASIHTTPRequest.m */,
+				05CFFC2F166C249F002D344E /* ASIHTTPRequestConfig.h */,
+				05CFFC30166C249F002D344E /* ASIHTTPRequestDelegate.h */,
+				05CFFC31166C249F002D344E /* ASIInputStream.h */,
+				05CFFC32166C249F002D344E /* ASIInputStream.m */,
+				05CFFC33166C249F002D344E /* ASINetworkQueue.h */,
+				05CFFC34166C249F002D344E /* ASINetworkQueue.m */,
+				05CFFC35166C249F002D344E /* ASIProgressDelegate.h */,
+				05CFFC36166C249F002D344E /* ASIWebPageRequest */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		05CFFC36166C249F002D344E /* ASIWebPageRequest */ = {
+			isa = PBXGroup;
+			children = (
+				05CFFC37166C249F002D344E /* ASIWebPageRequest.h */,
+				05CFFC38166C249F002D344E /* ASIWebPageRequest.m */,
+			);
+			path = ASIWebPageRequest;
+			sourceTree = "<group>";
+		};
+		05CFFC75166C249F002D344E /* External */ = {
+			isa = PBXGroup;
+			children = (
+				05CFFC76166C249F002D344E /* GHUnit */,
+				05CFFC78166C249F002D344E /* Reachability */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		05CFFC76166C249F002D344E /* GHUnit */ = {
+			isa = PBXGroup;
+			children = (
+				05CFFC77166C249F002D344E /* README-GHUnit */,
+			);
+			path = GHUnit;
+			sourceTree = "<group>";
+		};
+		05CFFC78166C249F002D344E /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				05CFFC79166C249F002D344E /* Reachability.h */,
+				05CFFC7A166C249F002D344E /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		B94F5B05163957FA00A5E3AB = {
 			isa = PBXGroup;
 			children = (
+				05CFFD35166C274A002D344E /* libxml2.2.dylib */,
+				05CFFD2D166C25B1002D344E /* libz.dylib */,
 				B94F5B1A163957FA00A5E3AB /* WeatherOnMap */,
 				B94F5B13163957FA00A5E3AB /* Frameworks */,
 				B94F5B11163957FA00A5E3AB /* Products */,
@@ -71,6 +332,11 @@
 		B94F5B13163957FA00A5E3AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05CFFD25166C2552002D344E /* MobileCoreServices.framework */,
+				05CFFD26166C2552002D344E /* Security.framework */,
+				05CFFD27166C2552002D344E /* SystemConfiguration.framework */,
+				05CFFD23166C2528002D344E /* CFNetwork.framework */,
+				05CFFD21166C251F002D344E /* QuartzCore.framework */,
 				B94F5B14163957FA00A5E3AB /* UIKit.framework */,
 				B94F5B16163957FA00A5E3AB /* Foundation.framework */,
 				B94F5B18163957FA00A5E3AB /* CoreGraphics.framework */,
@@ -81,9 +347,11 @@
 		B94F5B1A163957FA00A5E3AB /* WeatherOnMap */ = {
 			isa = PBXGroup;
 			children = (
+				0503347316753BBC00B7C7F4 /* Config */,
+				05CFFC19166C2467002D344E /* External */,
+				05CFFC14166C2047002D344E /* Helper */,
 				B94F5B351639584000A5E3AB /* Views */,
 				B94F5B341639583900A5E3AB /* ViewControllers */,
-				B94F5B331639582D00A5E3AB /* Model */,
 				B94F5B321639582000A5E3AB /* DataCache */,
 				B94F5B311639581000A5E3AB /* ApiService */,
 				B94F5B23163957FA00A5E3AB /* AppDelegate.h */,
@@ -110,8 +378,12 @@
 		B94F5B311639581000A5E3AB /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
+				0503347716753F4B00B7C7F4 /* ParseService */,
+				B94F5B331639582D00A5E3AB /* Model */,
 				B94F5B361639588900A5E3AB /* WeatherOnMapService.h */,
 				B94F5B371639588900A5E3AB /* WeatherOnMapService.m */,
+				050334781675428700B7C7F4 /* ServiceHTTPRequest.h */,
+				050334791675428700B7C7F4 /* ServiceHTTPRequest.m */,
 			);
 			name = ApiService;
 			sourceTree = "<group>";
@@ -126,6 +398,9 @@
 		B94F5B331639582D00A5E3AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0503345F1675222900B7C7F4 /* Response */,
+				0503345E1675222200B7C7F4 /* Request */,
+				0503347B167543F900B7C7F4 /* Models.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -133,6 +408,7 @@
 		B94F5B341639583900A5E3AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0503345A16751EAB00B7C7F4 /* BasicViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -179,6 +455,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = B94F5B05163957FA00A5E3AB;
 			productRefGroup = B94F5B11163957FA00A5E3AB /* Products */;
@@ -199,6 +476,7 @@
 				B94F5B27163957FA00A5E3AB /* Default.png in Resources */,
 				B94F5B29163957FA00A5E3AB /* Default@2x.png in Resources */,
 				B94F5B2B163957FA00A5E3AB /* Default-568h@2x.png in Resources */,
+				05CFFCEE166C249F002D344E /* README-GHUnit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +490,28 @@
 				B94F5B21163957FA00A5E3AB /* main.m in Sources */,
 				B94F5B25163957FA00A5E3AB /* AppDelegate.m in Sources */,
 				B94F5B381639588900A5E3AB /* WeatherOnMapService.m in Sources */,
+				05CFFC18166C2077002D344E /* NSDictionary+UrlEncoding.m in Sources */,
+				05CFFCC8166C249F002D344E /* ASIAuthenticationDialog.m in Sources */,
+				05CFFCC9166C249F002D344E /* ASIDataCompressor.m in Sources */,
+				05CFFCCA166C249F002D344E /* ASIDataDecompressor.m in Sources */,
+				05CFFCCB166C249F002D344E /* ASIDownloadCache.m in Sources */,
+				05CFFCCC166C249F002D344E /* ASIFormDataRequest.m in Sources */,
+				05CFFCCD166C249F002D344E /* ASIHTTPRequest.m in Sources */,
+				05CFFCCE166C249F002D344E /* ASIInputStream.m in Sources */,
+				05CFFCCF166C249F002D344E /* ASINetworkQueue.m in Sources */,
+				05CFFCD0166C249F002D344E /* ASIWebPageRequest.m in Sources */,
+				05CFFCEF166C249F002D344E /* Reachability.m in Sources */,
+				0503345D16751EDB00B7C7F4 /* BasicViewController.m in Sources */,
+				050334661675222900B7C7F4 /* BasicResponseModel.m in Sources */,
+				050334671675222900B7C7F4 /* StationResponseModel.m in Sources */,
+				050334681675222900B7C7F4 /* WeatherResponseModel.m in Sources */,
+				0503346B1675224300B7C7F4 /* BasicRequestModel.m in Sources */,
+				0503346E167522C000B7C7F4 /* WeatherRequestModel.m in Sources */,
+				05033471167522D000B7C7F4 /* StationRequestModel.m in Sources */,
+				0503347616753F4600B7C7F4 /* ParserResponseService.m in Sources */,
+				0503347A1675428800B7C7F4 /* ServiceHTTPRequest.m in Sources */,
+				050334811675488E00B7C7F4 /* WeatherModel.m in Sources */,
+				05033484167549DF00B7C7F4 /* WeatherConditionModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +582,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeatherOnMap/WeatherOnMap-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "WeatherOnMap/WeatherOnMap-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -293,6 +594,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeatherOnMap/WeatherOnMap-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "WeatherOnMap/WeatherOnMap-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -318,6 +620,7 @@
 				B94F5B30163957FA00A5E3AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

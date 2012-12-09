@@ -7,7 +7,9 @@
 //
 
 #import "ASIHTTPRequest.h"
-
+#import "Models.h"
+#import "WeatherOnMapService.h"
 @interface ServiceHTTPRequest : ASIHTTPRequest
-
+@property(nonatomic, retain) BasicRequestModel *requestModel;
+@property(nonatomic, assign) id<WeatherOnMapServiceDelegate> caller;
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "BasicResponseModel.h"
 @interface ParserResponseService : NSObject
-
++ (ParserResponseService*) sharedInstance;
+- (BasicResponseModel*) parseJsonString:(NSString*) jsonString forExpectedClassModel:(Class) classModel;
 @end

@@ -13,11 +13,23 @@
  
  */
 
-
 #import <Foundation/Foundation.h>
+#import "ASIHTTPRequest.h"
+#import "Models.h"
 
-@interface WeatherOnMapService : NSObject
+@protocol WeatherOnMapServiceDelegate <NSObject>
+
+- (void) didReceiveResponse:(BasicResponseModel*) basicResponse ;
+- (void) didReceiveError:(NSError*) error;
+@end
+
+
+
+@interface WeatherOnMapService : NSObject<WeatherOnMapServiceDelegate>
 
 + (WeatherOnMapService*) sharedInstance;
+- (void) getWeather:(WeatherRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller;
+- (void) getStation:(StationRequestModel*) request withRequestModel:(BasicRequestModel*) requestModel withCaller:(id<WeatherOnMapServiceDelegate>) caller;
+
 
 @end

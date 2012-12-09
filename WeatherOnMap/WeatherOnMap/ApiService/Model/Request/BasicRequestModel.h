@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSDictionary+UrlEncoding.h"
 
-@interface BasicRequestModel : NSObject
+@protocol BasicRequestModelProtocol <NSObject>
+@optional
+- (NSDictionary*) createParameters;
+@end
+
+@interface BasicRequestModel : NSObject<BasicRequestModelProtocol>
+@property(nonatomic, assign) double latitude;
+@property(nonatomic, assign) double longitude;
+@property(nonatomic, assign) int resultCountExpected;
 
 @end

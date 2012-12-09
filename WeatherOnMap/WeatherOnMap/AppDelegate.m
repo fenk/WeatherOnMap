@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 
+
+
 @implementation AppDelegate
+@synthesize rootViewController = _rootViewController;
 
 - (void)dealloc
 {
@@ -19,6 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.rootViewController = [[[BasicViewController alloc] init] autorelease];
+    self.window.rootViewController = self.rootViewController;
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
