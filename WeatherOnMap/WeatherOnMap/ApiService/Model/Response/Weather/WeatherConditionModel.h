@@ -59,7 +59,12 @@ typedef enum WeatherConditionType {
     ExtremeHail = 906
     } WeatherConditionType;
 
-@interface WeatherConditionModel : NSObject
-@property(nonatomic, assign) WeatherConditionType *weatherType;
+@interface WeatherConditionModel : NSObject<NSCopying>
+@property(nonatomic, copy) NSArray *identificatorWeatherArray;
+@property(nonatomic, copy) NSString *descriptionWeather;
+@property(nonatomic, retain) UIImageView *icon;
+@property(nonatomic, copy) NSString *main;
+
+- (id)initWithDictionary:(NSDictionary *)params;
 - (NSString *) urlIcon:(NSString*) code;
 @end

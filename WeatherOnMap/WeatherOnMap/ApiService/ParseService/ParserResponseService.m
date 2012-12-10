@@ -20,11 +20,14 @@ static ParserResponseService *instance = nil;
 
 - (BasicResponseModel*) parseJsonString:(NSString*) jsonString forExpectedClassModel:(Class) classModel{
     
-    
+    NSDictionary *deserializedData = [jsonString objectFromJSONString];
+    NSLog(@"%@", [deserializedData allKeys]);
     
     if (classModel == [WeatherRequestModel class]) {
     
-        WeatherResponseModel *weatherResponse = [[[WeatherResponseModel alloc] init] autorelease];
+                
+        WeatherResponseModel *weatherResponse = [[[WeatherResponseModel alloc] initWithDictionary:deserializedData] autorelease];
+        
         
         return weatherResponse;
         

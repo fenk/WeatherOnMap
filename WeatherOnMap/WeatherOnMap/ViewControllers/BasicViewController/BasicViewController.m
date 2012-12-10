@@ -7,7 +7,7 @@
 //
 
 #import "BasicViewController.h"
-
+#import "LocationService.h"
 
 @interface BasicViewController ()
 
@@ -34,14 +34,31 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    WeatherRequestModel *weatherRequest = [[WeatherRequestModel alloc] init];
-    weatherRequest.latitude = 40.6;
-    weatherRequest.longitude = 10.5;
-    weatherRequest.resultCountExpected = 5;
-    [[WeatherOnMapService sharedInstance] getWeather:weatherRequest withCaller:self];
-    [weatherRequest release];
+    UIButton *localizeMe = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [localizeMe setTitle:@"Localize Me" forState:UIControlStateNormal];
+    [localizeMe setFrame:CGRectMake(20, 100, 280, 40)];
+    [localizeMe addTarget:self action:@selector(localizeMeNow:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:localizeMe];
+    
+
     
 }
+
+- (void) localizeMeNow:(id) sender{
+    
+    CLLocationManager *manager = [[CLLocationManager alloc] init];
+    
+    [LocationService getUserLocationManager:manager WithCompletion:^(CLLocation *newLocation, CLLocation *oldLocation) {
+        WeatherRequestModel *weatherRequest = [[WeatherRequestModel alloc] init];
+        weatherRequest.latitude = newLocation.coordinate.latitude;
+        weatherRequest.longitude = newLocation.coordinate.longitude;
+        weatherRequest.resultCountExpected = 100;
+        [[WeatherOnMapService sharedInstance] getWeather:weatherRequest withCaller:self];
+        [weatherRequest release];
+        [manager stopUpdatingLocation];
+    }];
+}
+
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 }
@@ -59,7 +76,11 @@
 }
 
 - (void) didReceiveResponse:(BasicResponseModel*) basicResponse{
-    DebugLog(@"%@", basicResponse);
+    
+    WeatherResponseModel *response = (WeatherResponseModel*) basicResponse;
+    
+    DebugLog(@"%@", response.list);
+    
 }
 - (void) didReceiveError:(NSError*) error{
     DebugLog(@"%@", error);

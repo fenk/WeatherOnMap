@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "BasicResponseModel.h"
+#import <MapKit/MapKit.h>
+
 
 @interface WeatherResponseModel : BasicResponseModel
-
+@property(nonatomic, assign) int resultCountExpected;
+@property(nonatomic, assign) int cod;
+@property(nonatomic, copy) NSString *message;
+@property(nonatomic, copy) NSArray *list;
+- (id) initWithDictionary:(NSDictionary*) params;
 @end
