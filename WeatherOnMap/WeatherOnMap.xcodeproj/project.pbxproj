@@ -22,6 +22,19 @@
 		0503348B1675516400B7C7F4 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 050334881675516400B7C7F4 /* JSONKit.m */; };
 		0503348C1675516400B7C7F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 050334891675516400B7C7F4 /* README.md */; };
 		0503348E1675539800B7C7F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0503348D1675539800B7C7F4 /* MapKit.framework */; };
+		0533D86D167FB58A00ACA1F6 /* CityRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0533D86C167FB58A00ACA1F6 /* CityRequestModel.m */; };
+		0533D872167FB63400ACA1F6 /* CityResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0533D871167FB63400ACA1F6 /* CityResponseModel.m */; };
+		0533D875167FB74B00ACA1F6 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0533D874167FB74B00ACA1F6 /* CityModel.m */; };
+		05880947167E74B400DD7B15 /* StationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05880946167E74B400DD7B15 /* StationModel.m */; };
+		0588094B167E74C900DD7B15 /* StationConditionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0588094A167E74C900DD7B15 /* StationConditionModel.m */; };
+		05880957167E7C1400DD7B15 /* WeatherCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 05880956167E7C1400DD7B15 /* WeatherCloud.m */; };
+		0588095A167E7C2500DD7B15 /* WeatherRain.m in Sources */ = {isa = PBXBuildFile; fileRef = 05880959167E7C2400DD7B15 /* WeatherRain.m */; };
+		0588095D167E821800DD7B15 /* WeatherVisibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0588095C167E821600DD7B15 /* WeatherVisibility.m */; };
+		05880960167E8C8800DD7B15 /* WeatherAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0588095F167E8C8800DD7B15 /* WeatherAnnotation.m */; };
+		05A15BFE1681200200E249C8 /* WeatherCurrentCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15BFD1681200100E249C8 /* WeatherCurrentCache.m */; };
+		05A15C06168141FF00E249C8 /* WeatherBoxResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C05168141FF00E249C8 /* WeatherBoxResponseModel.m */; };
+		05A15C091681422200E249C8 /* WeatherBoxRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C081681422200E249C8 /* WeatherBoxRequestModel.m */; };
+		05A15C0C1681431B00E249C8 /* WeatherBoxModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C0B1681431B00E249C8 /* WeatherBoxModel.m */; };
 		05CB27C01676739E0055121B /* WeatherMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB27BF1676739E0055121B /* WeatherMain.m */; };
 		05CB27C4167674070055121B /* WeatherWind.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB27C3167674070055121B /* WeatherWind.m */; };
 		05CB283D167682740055121B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 05CB2823167682740055121B /* LICENSE */; };
@@ -96,6 +109,32 @@
 		050334881675516400B7C7F4 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		050334891675516400B7C7F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0503348D1675539800B7C7F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0533D86B167FB58A00ACA1F6 /* CityRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityRequestModel.h; sourceTree = "<group>"; };
+		0533D86C167FB58A00ACA1F6 /* CityRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityRequestModel.m; sourceTree = "<group>"; };
+		0533D870167FB63400ACA1F6 /* CityResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityResponseModel.h; path = City/CityResponseModel.h; sourceTree = "<group>"; };
+		0533D871167FB63400ACA1F6 /* CityResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityResponseModel.m; path = City/CityResponseModel.m; sourceTree = "<group>"; };
+		0533D873167FB74B00ACA1F6 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityModel.h; path = City/CityModel.h; sourceTree = "<group>"; };
+		0533D874167FB74B00ACA1F6 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityModel.m; path = City/CityModel.m; sourceTree = "<group>"; };
+		05880945167E74B400DD7B15 /* StationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationModel.h; path = Station/StationModel.h; sourceTree = "<group>"; };
+		05880946167E74B400DD7B15 /* StationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationModel.m; path = Station/StationModel.m; sourceTree = "<group>"; };
+		05880949167E74C900DD7B15 /* StationConditionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationConditionModel.h; path = Station/StationConditionModel.h; sourceTree = "<group>"; };
+		0588094A167E74C900DD7B15 /* StationConditionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationConditionModel.m; path = Station/StationConditionModel.m; sourceTree = "<group>"; };
+		05880955167E7C1300DD7B15 /* WeatherCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherCloud.h; path = Weather/WeatherCloud.h; sourceTree = "<group>"; };
+		05880956167E7C1400DD7B15 /* WeatherCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherCloud.m; path = Weather/WeatherCloud.m; sourceTree = "<group>"; };
+		05880958167E7C2400DD7B15 /* WeatherRain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherRain.h; path = Weather/WeatherRain.h; sourceTree = "<group>"; };
+		05880959167E7C2400DD7B15 /* WeatherRain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherRain.m; path = Weather/WeatherRain.m; sourceTree = "<group>"; };
+		0588095B167E821400DD7B15 /* WeatherVisibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherVisibility.h; path = Weather/WeatherVisibility.h; sourceTree = "<group>"; };
+		0588095C167E821600DD7B15 /* WeatherVisibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherVisibility.m; path = Weather/WeatherVisibility.m; sourceTree = "<group>"; };
+		0588095E167E8C8800DD7B15 /* WeatherAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherAnnotation.h; path = Views/WeatherAnnotation.h; sourceTree = "<group>"; };
+		0588095F167E8C8800DD7B15 /* WeatherAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherAnnotation.m; path = Views/WeatherAnnotation.m; sourceTree = "<group>"; };
+		05A15BFC1681200100E249C8 /* WeatherCurrentCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherCurrentCache.h; path = DataCache/WeatherCurrentCache.h; sourceTree = "<group>"; };
+		05A15BFD1681200100E249C8 /* WeatherCurrentCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherCurrentCache.m; path = DataCache/WeatherCurrentCache.m; sourceTree = "<group>"; };
+		05A15C04168141FF00E249C8 /* WeatherBoxResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherBoxResponseModel.h; path = WeatherBox/WeatherBoxResponseModel.h; sourceTree = "<group>"; };
+		05A15C05168141FF00E249C8 /* WeatherBoxResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherBoxResponseModel.m; path = WeatherBox/WeatherBoxResponseModel.m; sourceTree = "<group>"; };
+		05A15C071681422200E249C8 /* WeatherBoxRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherBoxRequestModel.h; sourceTree = "<group>"; };
+		05A15C081681422200E249C8 /* WeatherBoxRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherBoxRequestModel.m; sourceTree = "<group>"; };
+		05A15C0A1681431B00E249C8 /* WeatherBoxModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherBoxModel.h; path = WeatherBox/WeatherBoxModel.h; sourceTree = "<group>"; };
+		05A15C0B1681431B00E249C8 /* WeatherBoxModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherBoxModel.m; path = WeatherBox/WeatherBoxModel.m; sourceTree = "<group>"; };
 		05CB27BE1676739E0055121B /* WeatherMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherMain.h; path = Weather/WeatherMain.h; sourceTree = "<group>"; };
 		05CB27BF1676739E0055121B /* WeatherMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherMain.m; path = Weather/WeatherMain.m; sourceTree = "<group>"; };
 		05CB27C2167674070055121B /* WeatherWind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherWind.h; path = Weather/WeatherWind.h; sourceTree = "<group>"; };
@@ -215,6 +254,10 @@
 				0503346D167522C000B7C7F4 /* WeatherRequestModel.m */,
 				0503346F167522D000B7C7F4 /* StationRequestModel.h */,
 				05033470167522D000B7C7F4 /* StationRequestModel.m */,
+				0533D86B167FB58A00ACA1F6 /* CityRequestModel.h */,
+				0533D86C167FB58A00ACA1F6 /* CityRequestModel.m */,
+				05A15C071681422200E249C8 /* WeatherBoxRequestModel.h */,
+				05A15C081681422200E249C8 /* WeatherBoxRequestModel.m */,
 			);
 			name = Request;
 			path = ApiService/Model/Request;
@@ -223,6 +266,8 @@
 		0503345F1675222900B7C7F4 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				05A15C03168141BB00E249C8 /* WeatherBox */,
+				0533D86F167FB61900ACA1F6 /* City */,
 				0503347D1675482E00B7C7F4 /* Station */,
 				0503347C1675482000B7C7F4 /* Weather */,
 				050334601675222900B7C7F4 /* BasicResponseModel.h */,
@@ -262,6 +307,12 @@
 				05CB27BF1676739E0055121B /* WeatherMain.m */,
 				05CB27C2167674070055121B /* WeatherWind.h */,
 				05CB27C3167674070055121B /* WeatherWind.m */,
+				05880955167E7C1300DD7B15 /* WeatherCloud.h */,
+				05880956167E7C1400DD7B15 /* WeatherCloud.m */,
+				05880958167E7C2400DD7B15 /* WeatherRain.h */,
+				05880959167E7C2400DD7B15 /* WeatherRain.m */,
+				0588095B167E821400DD7B15 /* WeatherVisibility.h */,
+				0588095C167E821600DD7B15 /* WeatherVisibility.m */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -271,6 +322,10 @@
 			children = (
 				050334621675222900B7C7F4 /* StationResponseModel.h */,
 				050334631675222900B7C7F4 /* StationResponseModel.m */,
+				05880945167E74B400DD7B15 /* StationModel.h */,
+				05880946167E74B400DD7B15 /* StationModel.m */,
+				05880949167E74C900DD7B15 /* StationConditionModel.h */,
+				0588094A167E74C900DD7B15 /* StationConditionModel.m */,
 			);
 			name = Station;
 			sourceTree = "<group>";
@@ -285,6 +340,45 @@
 			);
 			name = json;
 			path = ../../lib/json;
+			sourceTree = "<group>";
+		};
+		0533D86F167FB61900ACA1F6 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				0533D870167FB63400ACA1F6 /* CityResponseModel.h */,
+				0533D871167FB63400ACA1F6 /* CityResponseModel.m */,
+				0533D873167FB74B00ACA1F6 /* CityModel.h */,
+				0533D874167FB74B00ACA1F6 /* CityModel.m */,
+			);
+			name = City;
+			sourceTree = "<group>";
+		};
+		0533D876167FBC0300ACA1F6 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				0533D877167FBC0A00ACA1F6 /* Weather */,
+			);
+			name = Annotations;
+			sourceTree = "<group>";
+		};
+		0533D877167FBC0A00ACA1F6 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				0588095E167E8C8800DD7B15 /* WeatherAnnotation.h */,
+				0588095F167E8C8800DD7B15 /* WeatherAnnotation.m */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		05A15C03168141BB00E249C8 /* WeatherBox */ = {
+			isa = PBXGroup;
+			children = (
+				05A15C04168141FF00E249C8 /* WeatherBoxResponseModel.h */,
+				05A15C05168141FF00E249C8 /* WeatherBoxResponseModel.m */,
+				05A15C0A1681431B00E249C8 /* WeatherBoxModel.h */,
+				05A15C0B1681431B00E249C8 /* WeatherBoxModel.m */,
+			);
+			name = WeatherBox;
 			sourceTree = "<group>";
 		};
 		05CB27C816767EC20055121B /* sdweb-image */ = {
@@ -500,6 +594,8 @@
 		B94F5B321639582000A5E3AB /* DataCache */ = {
 			isa = PBXGroup;
 			children = (
+				05A15BFC1681200100E249C8 /* WeatherCurrentCache.h */,
+				05A15BFD1681200100E249C8 /* WeatherCurrentCache.m */,
 			);
 			name = DataCache;
 			sourceTree = "<group>";
@@ -525,6 +621,7 @@
 		B94F5B351639584000A5E3AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0533D876167FBC0300ACA1F6 /* Annotations */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -636,6 +733,19 @@
 				05CB2844167682740055121B /* UIButton+WebCache.m in Sources */,
 				05CB2845167682740055121B /* UIImageView+WebCache.m in Sources */,
 				05CB284C16768A020055121B /* LocationService.m in Sources */,
+				05880947167E74B400DD7B15 /* StationModel.m in Sources */,
+				0588094B167E74C900DD7B15 /* StationConditionModel.m in Sources */,
+				05880957167E7C1400DD7B15 /* WeatherCloud.m in Sources */,
+				0588095A167E7C2500DD7B15 /* WeatherRain.m in Sources */,
+				0588095D167E821800DD7B15 /* WeatherVisibility.m in Sources */,
+				05880960167E8C8800DD7B15 /* WeatherAnnotation.m in Sources */,
+				0533D86D167FB58A00ACA1F6 /* CityRequestModel.m in Sources */,
+				0533D872167FB63400ACA1F6 /* CityResponseModel.m in Sources */,
+				0533D875167FB74B00ACA1F6 /* CityModel.m in Sources */,
+				05A15BFE1681200200E249C8 /* WeatherCurrentCache.m in Sources */,
+				05A15C06168141FF00E249C8 /* WeatherBoxResponseModel.m in Sources */,
+				05A15C091681422200E249C8 /* WeatherBoxRequestModel.m in Sources */,
+				05A15C0C1681431B00E249C8 /* WeatherBoxModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,7 +784,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -694,7 +804,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -704,11 +814,15 @@
 		B94F5B2F163957FA00A5E3AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacek Grygiel (269P4VJXDJ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeatherOnMap/WeatherOnMap-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "WeatherOnMap/WeatherOnMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4686793C-D5EA-4B58-8C40-07EED5B7AF26";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -716,11 +830,15 @@
 		B94F5B30163957FA00A5E3AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacek Grygiel (269P4VJXDJ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeatherOnMap/WeatherOnMap-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "WeatherOnMap/WeatherOnMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4686793C-D5EA-4B58-8C40-07EED5B7AF26";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

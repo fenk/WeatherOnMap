@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "WeatherConditionModel.h"
 #import "WeatherMain.h"
+#import "WeatherCloud.h"
 #import "WeatherConditionModel.h"
 #import "WeatherWind.h"
 
@@ -16,7 +17,7 @@
 {
 
 }
-@property(nonatomic, assign) int cloudsNumber;
+@property(nonatomic, copy) WeatherCloud *cloud;
 @property(nonatomic, assign) double distance;
 @property(nonatomic, assign) double lat;
 @property(nonatomic, assign) double lon;

@@ -12,8 +12,12 @@
 #import "BasicRequestModel.h"
 #import "BasicResponseModel.h"
 #import "WeatherRequestModel.h"
+#import "WeatherBoxRequestModel.h"
 #import "StationRequestModel.h"
+#import "CityRequestModel.h"
 #import "WeatherResponseModel.h"
+#import "WeatherBoxResponseModel.h"
 #import "StationResponseModel.h"
+#import "CityResponseModel.h"
 
 #endif

@@ -11,4 +11,5 @@
 
 @interface StationResponseModel : BasicResponseModel
 
+- (id) initWithDictionary:(NSDictionary*) params;
 @end

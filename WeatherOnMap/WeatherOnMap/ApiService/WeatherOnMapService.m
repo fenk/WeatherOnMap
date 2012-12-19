@@ -37,12 +37,25 @@ static WeatherOnMapService *instance = nil;
 }
 
 
-- (void) getWeather:(WeatherRequestModel *)request withCaller:(id)caller{
+- (void) getWeather:(WeatherRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller{
+    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_URL, @"station?"];
+    NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
+    [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
+}
+- (void) getWeatherByBBox:(WeatherBoxRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller{
+    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_RECT, @"getrect?"];
+    NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
+    [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
+}
+
+
+- (void) getStation:(StationRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller{
     NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_URL, @"city?"];
     NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
     [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
 }
-- (void) getStation:(StationRequestModel*) request withCaller:(id) caller{
+
+- (void) getCity:(CityRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller{
     NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_URL, @"station?"];
     NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
     [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
@@ -50,6 +63,7 @@ static WeatherOnMapService *instance = nil;
 
 
 - (void) sendRequestWithUrl:(NSString*) urlString withRequestModel:(BasicRequestModel*) requestModel withCaller:(id) caller{
+    DebugLog(@"%@", urlString);
     if (!self.mainQueue) {
         [self setMainQueue:[[[NSOperationQueue alloc] init] autorelease]];
     }

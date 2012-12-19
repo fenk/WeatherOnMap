@@ -18,7 +18,6 @@
 #import "Models.h"
 
 @protocol WeatherOnMapServiceDelegate <NSObject>
-
 - (void) didReceiveResponse:(BasicResponseModel*) basicResponse ;
 - (void) didReceiveError:(NSError*) error;
 @end
@@ -29,7 +28,8 @@
 
 + (WeatherOnMapService*) sharedInstance;
 - (void) getWeather:(WeatherRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller;
-- (void) getStation:(StationRequestModel*) request withRequestModel:(BasicRequestModel*) requestModel withCaller:(id<WeatherOnMapServiceDelegate>) caller;
-
+- (void) getWeatherByBBox:(WeatherBoxRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller;
+- (void) getStation:(StationRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller;
+- (void) getCity:(CityRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller;
 
 @end

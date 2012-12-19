@@ -36,7 +36,6 @@
 
 - (void)dealloc
 {
-    [self.list release];
     [super dealloc];
 }
 @end

@@ -10,4 +10,5 @@
 #define WeatherOnMap_Config_h
 #endif
 #define API_ADDRESS_URL @"http://openweathermap.org/data/2.1/find/"
+#define API_ADDRESS_RECT @"http://openweathermap.org/data/"
 #define API_WEATHER_CONDITION_IMG_URL @"http://openweathermap.org/img/w/"

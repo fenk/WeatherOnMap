@@ -1,17 +1,14 @@
 //
-//  StationModel.m
+//  WeatherBoxResponseModel.m
 //  WeatherOnMap
 //
-//  Created by Jacek Grygiel on 12/9/12.
+//  Created by Jacek Grygiel on 12/19/12.
 //  Copyright (c) 2012 Jacek Grygiel. All rights reserved.
 //
 
-#import "StationResponseModel.h"
-#import "StationModel.h"
-
-@implementation StationResponseModel
-
-
+#import "WeatherBoxResponseModel.h"
+#import "WeatherBoxModel.h"
+@implementation WeatherBoxResponseModel
 - (id) initWithDictionary:(NSDictionary*) params{
     self = [super init];
     if (self) {
@@ -21,18 +18,13 @@
         self.message = [params valueForKey:@"message"];
         
         NSArray *list = [params valueForKey:@"list"];
-        NSMutableArray *stations = [NSMutableArray array];
+        NSMutableArray *weathers = [NSMutableArray array];
         for (id obj in list) {
-            StationModel *stationModel = [[StationModel alloc] initWithDictionary:obj];
-            [stations addObject:stationModel];
+            WeatherBoxModel *weatherBoxModel = [[WeatherBoxModel alloc] initWithDictionary:obj];
+            [weathers addObject:weatherBoxModel];
         }
-        self.list = [NSArray arrayWithArray:stations];
+        self.list = [NSArray arrayWithArray:weathers];
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
 }
 @end

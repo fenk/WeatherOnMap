@@ -9,5 +9,22 @@
 #import "BasicResponseModel.h"
 
 @implementation BasicResponseModel
+@synthesize resultCountExpected = _resultCountExpected;
+@synthesize cod = _cod;
+@synthesize list = _list;
+@synthesize message = _message;
+
+- (id) initWithDictionary:(NSDictionary*) params{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [self.list release];
+    [super dealloc];
+}
 
 @end

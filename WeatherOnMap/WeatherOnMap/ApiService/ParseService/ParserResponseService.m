@@ -25,17 +25,27 @@ static ParserResponseService *instance = nil;
     
     if (classModel == [WeatherRequestModel class]) {
     
-                
         WeatherResponseModel *weatherResponse = [[[WeatherResponseModel alloc] initWithDictionary:deserializedData] autorelease];
         
+        return weatherResponse;
+        
+    }else if (classModel == [WeatherBoxRequestModel class]) {
+        
+        WeatherBoxResponseModel *weatherResponse = [[[WeatherBoxResponseModel alloc] initWithDictionary:deserializedData] autorelease];
         
         return weatherResponse;
         
     }else if (classModel == [StationRequestModel class]){
         
-        StationResponseModel *stationResponse = [[[StationResponseModel alloc] init] autorelease];
+        StationResponseModel *stationResponse = [[[StationResponseModel alloc] initWithDictionary:deserializedData] autorelease];
         
         return stationResponse;
+    
+    }else if (classModel == [CityRequestModel class]){
+        
+        CityResponseModel *cityResponse = [[[CityResponseModel alloc] initWithDictionary:deserializedData ] autorelease];
+        
+        return cityResponse;
     }
     
     

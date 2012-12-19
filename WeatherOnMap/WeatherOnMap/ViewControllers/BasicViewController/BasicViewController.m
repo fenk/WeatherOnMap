@@ -8,13 +8,16 @@
 
 #import "BasicViewController.h"
 #import "LocationService.h"
+#import "StationModel.h"
+#import "WeatherAnnotation.h"
+#import "WeatherCurrentCache.h"
 
 @interface BasicViewController ()
-
+@property(nonatomic, retain) MKMapView *mapView;
 @end
 
 @implementation BasicViewController
-
+@synthesize mapView = _mapView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,30 +36,31 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    UIButton *localizeMe = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [localizeMe setTitle:@"Localize Me" forState:UIControlStateNormal];
-    [localizeMe setFrame:CGRectMake(20, 100, 280, 40)];
-    [localizeMe addTarget:self action:@selector(localizeMeNow:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:localizeMe];
-    
-
-    
+    self.mapView = [[[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)] autorelease];
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    [self.view addSubview:self.mapView];
 }
 
-- (void) localizeMeNow:(id) sender{
+- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
     
-    CLLocationManager *manager = [[CLLocationManager alloc] init];
+}
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    CLLocationCoordinate2D centre = [self.mapView convertPoint:self.mapView.center toCoordinateFromView:self.view];
     
-    [LocationService getUserLocationManager:manager WithCompletion:^(CLLocation *newLocation, CLLocation *oldLocation) {
-        WeatherRequestModel *weatherRequest = [[WeatherRequestModel alloc] init];
-        weatherRequest.latitude = newLocation.coordinate.latitude;
-        weatherRequest.longitude = newLocation.coordinate.longitude;
-        weatherRequest.resultCountExpected = 100;
-        [[WeatherOnMapService sharedInstance] getWeather:weatherRequest withCaller:self];
-        [weatherRequest release];
-        [manager stopUpdatingLocation];
-    }];
+    
+    
+    
+    CLLocationCoordinate2D leftTop = [self.mapView convertPoint:CGPointMake(self.mapView.frame.origin.x, self.mapView.frame.origin.y) toCoordinateFromView:self.view];
+    CLLocationCoordinate2D rightBottom = [self.mapView convertPoint:CGPointMake(self.mapView.frame.origin.x+self.mapView.frame.size.width, self.mapView.frame.origin.y+self.mapView.frame.size.height) toCoordinateFromView:self.view];
+    
+    BBox bbox = BBoxMake(leftTop, rightBottom);
+    
+    
+    WeatherBoxRequestModel *weatherRequest = [[WeatherBoxRequestModel alloc] init];
+    weatherRequest.bbox = bbox;
+    [[WeatherOnMapService sharedInstance] getWeatherByBBox:weatherRequest withCaller:self];
+    [weatherRequest release];
 }
 
 - (void) viewWillAppear:(BOOL)animated{
@@ -76,12 +80,49 @@
 }
 
 - (void) didReceiveResponse:(BasicResponseModel*) basicResponse{
-    
-    WeatherResponseModel *response = (WeatherResponseModel*) basicResponse;
-    
-    DebugLog(@"%@", response.list);
-    
+    CFAbsoluteTime timeC = CFAbsoluteTimeGetCurrent();
+    WeatherBoxResponseModel *response = (WeatherBoxResponseModel*) basicResponse;
+    for (WeatherBoxModel *model in response.list) {
+        if ([[WeatherCurrentCache sharedInstance] addWeatherBoxModel:model]){
+            WeatherAnnotation *annotation = [[[WeatherAnnotation alloc] init] autorelease];
+            [annotation setCoordinate:CLLocationCoordinate2DMake(model.lat, model.lon)];
+            annotation.weatherBoxModel = model;
+            [self.mapView addAnnotation:annotation];
+        }
+    }
+    NSLog(@"time = %f", CFAbsoluteTimeGetCurrent()-timeC);
+
 }
+
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    static NSString* weatherAnnotationIdentifier = @"weatherAnnotationIdentifier";
+    WeatherAnnotation *weatherAnnotation = (WeatherAnnotation*) annotation;
+    UIImageView *img = nil;
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:weatherAnnotationIdentifier];
+    
+    if (annotationView == nil)
+    {
+        annotationView = [[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:weatherAnnotationIdentifier] autorelease];
+        
+        annotationView.backgroundColor = [UIColor redColor];
+        annotationView.frame = CGRectMake(0, 0, 30, 30);
+
+
+
+    }
+        
+    annotationView.image = img.image;
+    annotationView.annotation = annotation;
+
+    return annotationView;
+}
+
 - (void) didReceiveError:(NSError*) error{
     DebugLog(@"%@", error);
 }

@@ -1,16 +1,14 @@
 //
-//  WeatherConditionModel.m
+//  StationConditionModel.m
 //  WeatherOnMap
 //
-//  Created by Jacek Grygiel on 12/9/12.
+//  Created by Jacek Grygiel on 12/16/12.
 //  Copyright (c) 2012 Jacek Grygiel. All rights reserved.
 //
 
-#import "WeatherConditionModel.h"
-#import "UIImageView+WebCache.h"
+#import "StationConditionModel.h"
 
-
-@implementation WeatherConditionModel
+@implementation StationConditionModel
 @synthesize identificatorWeatherArray = _identificatorWeatherArray;
 @synthesize descriptionWeather = _descriptionWeather;
 @synthesize main = _main;
@@ -19,12 +17,11 @@
 - (id)initWithDictionary:(NSDictionary *)params{
     self = [super init];
     if (self) {
-        self.descriptionWeather = [[params valueForKey:@"description"] objectAtIndex:0];
-
+        self.descriptionWeather = [params valueForKey:@"description"];
+        
         self.icon = [[[UIImageView alloc] init] autorelease];
-        NSString *url = [self urlIcon:[[params valueForKey:@"icon"] objectAtIndex:0]];
-        [self.icon  setImageWithURL:[NSURL URLWithString:url]
-                  placeholderImage:nil];
+        [self.icon  setImageWithURL:[NSURL URLWithString:[self urlIcon:[params valueForKey:@"icon"]]]
+                   placeholderImage:nil];
         
         self.identificatorWeatherArray  = [NSArray arrayWithArray:[params valueForKey:@"id"]];
         self.main = [params valueForKey:@"main"];
@@ -32,7 +29,7 @@
     return self;
 }
 - (id)copyWithZone:(NSZone *)zone{
-    WeatherConditionModel *copy = [[WeatherConditionModel alloc] init];
+    StationConditionModel *copy = [[StationConditionModel alloc] init];
     copy.descriptionWeather = [self.descriptionWeather copy];
     copy.icon = [self.icon retain];
     copy.identificatorWeatherArray = [self.identificatorWeatherArray copy];
@@ -41,8 +38,7 @@
 }
 
 - (NSString *) urlIcon:(NSString*) code{
-    
-    NSString* url = [NSString stringWithFormat:@"%@%@.png", API_WEATHER_CONDITION_IMG_URL, code];
+    NSString* url = [NSString stringWithFormat:@"%@%@", API_WEATHER_CONDITION_IMG_URL, code];
     return url;
 }
 
