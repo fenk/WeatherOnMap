@@ -8,6 +8,7 @@
 
 #import "WeatherBoxResponseModel.h"
 #import "WeatherBoxModel.h"
+
 @implementation WeatherBoxResponseModel
 - (id) initWithDictionary:(NSDictionary*) params{
     self = [super init];
@@ -20,11 +21,12 @@
         NSArray *list = [params valueForKey:@"list"];
         NSMutableArray *weathers = [NSMutableArray array];
         for (id obj in list) {
-            WeatherBoxModel *weatherBoxModel = [[WeatherBoxModel alloc] initWithDictionary:obj];
+            WeatherBoxModel *weatherBoxModel = [[[WeatherBoxModel alloc] initWithDictionary:obj] autorelease];
             [weathers addObject:weatherBoxModel];
         }
         self.list = [NSArray arrayWithArray:weathers];
     }
     return self;
 }
+
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WeatherBoxModel : NSObject
+@interface WeatherBoxModel : NSObject<NSCopying>
 @property(nonatomic, assign) int cloud;
 @property(nonatomic, copy) NSString *datatype;
 @property(nonatomic, assign) double lat;
@@ -27,5 +27,6 @@
 @property(nonatomic, assign) int wind_ms;
 @property(nonatomic, assign) int range;
 @property(nonatomic, assign) int type;
+@property(nonatomic, retain) UIImageView *icon;
 - (id) initWithDictionary:(NSDictionary*) params;
 @end

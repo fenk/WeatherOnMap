@@ -20,7 +20,7 @@
 
 - (id)copyWithZone:(NSZone *)zone{
     WeatherVisibility *copy = [[WeatherVisibility alloc] init];
-    copy.prefix = [self.prefix copy];
+    copy.prefix = self.prefix;
     copy.distance = self.distance;
     return copy;
 }

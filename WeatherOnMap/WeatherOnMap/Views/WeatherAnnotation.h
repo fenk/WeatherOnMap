@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
-#import "WeatherBoxModel.h"
-@interface WeatherAnnotation : NSObject<MKAnnotation>{
-CLLocationCoordinate2D _coordinate;
-    WeatherBoxModel *_weatherBoxModel;
+#import "BasicAnnotationView.h"
+#import "WeatherModel.h"
+@interface WeatherAnnotation : BasicAnnotationView{
+    WeatherModel *_weatherModel;
 }
-@property(nonatomic, retain) WeatherBoxModel *weatherBoxModel;
+@property(nonatomic, retain) WeatherModel *weatherModel;
 @end

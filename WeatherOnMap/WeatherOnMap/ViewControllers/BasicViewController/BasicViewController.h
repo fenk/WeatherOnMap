@@ -10,7 +10,12 @@
 #import "WeatherOnMapService.h"
 #import <MapKit/MapKit.h>
 #import "Models.h"
+#import "LocationService.h"
+#import "StationModel.h"
+#import "WeatherAnnotation.h"
+#import "WeatherBoxAnnotation.h"
+#import "WeatherCurrentCache.h"
 
-@interface BasicViewController : UIViewController<WeatherOnMapServiceDelegate,MKMapViewDelegate>
+@interface BasicViewController : UIViewController
 
 @end

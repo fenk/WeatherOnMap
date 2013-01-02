@@ -13,6 +13,7 @@
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:@"city" forKey:@"type"];
+    [params setValue:@"55a83e1b65020a59b09fc40187f2d75b" forKey:@"APPID"];
     [params setValue:[NSString stringWithFormat:@"%f",self.bbox.leftTop.latitude] forKey:@"lat1"];
     [params setValue:[NSString stringWithFormat:@"%f",self.bbox.rightBottom.latitude] forKey:@"lat2"];
     [params setValue:[NSString stringWithFormat:@"%f",self.bbox.leftTop.longitude] forKey:@"lng1"];

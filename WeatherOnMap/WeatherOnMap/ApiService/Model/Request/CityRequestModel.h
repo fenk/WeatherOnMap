@@ -10,4 +10,6 @@
 
 @interface CityRequestModel : BasicRequestModel
 @property(nonatomic, retain) NSString *cityName;
+@property(nonatomic, assign) long long identificator;
+- (NSDictionary *)createParametersWithCityName:(NSString*) cityName;
 @end

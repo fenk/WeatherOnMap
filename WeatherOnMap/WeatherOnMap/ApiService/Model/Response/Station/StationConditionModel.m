@@ -7,6 +7,7 @@
 //
 
 #import "StationConditionModel.h"
+#import "UIImageView+WebCache.h"
 
 @implementation StationConditionModel
 @synthesize identificatorWeatherArray = _identificatorWeatherArray;
@@ -30,10 +31,10 @@
 }
 - (id)copyWithZone:(NSZone *)zone{
     StationConditionModel *copy = [[StationConditionModel alloc] init];
-    copy.descriptionWeather = [self.descriptionWeather copy];
-    copy.icon = [self.icon retain];
-    copy.identificatorWeatherArray = [self.identificatorWeatherArray copy];
-    copy.main = [self.main copy];
+    copy.descriptionWeather = self.descriptionWeather ;
+    copy.icon = self.icon;
+    copy.identificatorWeatherArray = self.identificatorWeatherArray;
+    copy.main = self.main;
     return copy;
 }
 
@@ -44,10 +45,10 @@
 
 - (void)dealloc
 {
-    [self.icon release];
-    [self.identificatorWeatherArray release];
-    [self.descriptionWeather release];
-    [self.main release];
+    self.icon = nil;
+    self.identificatorWeatherArray = nil;
+    self.descriptionWeather = nil;
+    self.main  = nil;
     [super dealloc];
 }
 - (NSString*) description{

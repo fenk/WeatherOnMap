@@ -7,6 +7,11 @@
 //
 
 #import "BasicResponseModel.h"
+#import "WeatherOnMapService.h"
 
-@interface WeatherBoxResponseModel : BasicResponseModel
+@protocol WeatherOnMapServiceDelegate;
+
+@interface WeatherBoxResponseModel : BasicResponseModel<WeatherOnMapServiceDelegate>
+
+@property(nonatomic, retain) NSMutableDictionary *weathersDictionary;
 @end

@@ -10,6 +10,9 @@
 
 @interface WeatherCloud : NSObject<NSCopying>
 @property(nonatomic, assign) int all;
+@property(nonatomic, assign) int high;
+@property(nonatomic, assign) int low;
+@property(nonatomic, assign) int middle;
 @property(nonatomic, assign) double distance;
 @property(nonatomic, copy) NSString* condition;
 @property(nonatomic, copy) NSString* cumulus;

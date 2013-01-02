@@ -12,6 +12,7 @@
 - (NSDictionary *)createParameters{
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:@"55a83e1b65020a59b09fc40187f2d75b" forKey:@"APPID"];
     [params setValue:[NSNumber numberWithDouble:self.latitude] forKey:@"lat"];
     [params setValue:[NSNumber numberWithDouble:self.longitude] forKey:@"lon"];
     [params setValue:[NSNumber numberWithDouble:self.resultCountExpected] forKey:@"cnt"];

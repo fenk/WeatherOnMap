@@ -23,7 +23,7 @@
         NSArray *list = [params valueForKey:@"list"];
         NSMutableArray *stations = [NSMutableArray array];
         for (id obj in list) {
-            StationModel *stationModel = [[StationModel alloc] initWithDictionary:obj];
+            StationModel *stationModel = [[[StationModel alloc] initWithDictionary:obj] autorelease];
             [stations addObject:stationModel];
         }
         self.list = [NSArray arrayWithArray:stations];

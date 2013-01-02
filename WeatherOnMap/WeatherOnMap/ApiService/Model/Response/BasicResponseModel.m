@@ -23,7 +23,7 @@
 
 - (void)dealloc
 {
-    [self.list release];
+    self.list = nil;
     [super dealloc];
 }
 

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BasicViewController.h"
+#import "BasicTabBarController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, retain) BasicViewController *rootViewController;
+@property (nonatomic, retain) BasicTabBarController *tabBarController;
 @end

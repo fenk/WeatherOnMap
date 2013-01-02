@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WeatherModel.h"
 
-@interface CityModel : NSObject
--(id) initWithDictionary:(NSDictionary*) params;
+@interface CityModel : WeatherModel
 @end

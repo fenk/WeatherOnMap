@@ -12,7 +12,7 @@
 @synthesize requestModel = _requestModel;
 @synthesize caller = _caller;
 - (void)dealloc{
-    [self.requestModel release];
+    self.requestModel = nil;
     [super dealloc];
 }
 @end

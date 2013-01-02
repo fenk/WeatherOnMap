@@ -14,5 +14,6 @@
 @property(nonatomic, assign) double temp;
 @property(nonatomic, assign) double temp_max;
 @property(nonatomic, assign) double temp_min;
+
 - (id) initWithDictionary:(NSDictionary*) params;
 @end

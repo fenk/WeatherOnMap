@@ -20,7 +20,7 @@ static LocationService *instance = nil;
     {
 		instance = [[self alloc] init];
         //ReccoService created 
-        instance.userLocation = [[CLLocation alloc] init];
+        instance.userLocation = [[[CLLocation alloc] init] autorelease];
     }
 	
 	return instance; 
@@ -34,7 +34,7 @@ static LocationService *instance = nil;
 
 + (void)getUserLocationManager:(CLLocationManager*) locationManager WithCompletion:(CLLocationManagerCompletion) completion{
     __block LocationService *delegate = [[LocationService alloc] init];
-    delegate.callbackCLManager = ^(CLLocation *newLocation,CLLocation *oldLocation) {
+    delegate = ^(CLLocation *newLocation,CLLocation *oldLocation) {
         completion(newLocation,oldLocation);
         
         [locationManager stopUpdatingLocation];
@@ -58,8 +58,8 @@ static LocationService *instance = nil;
 }
 
 - (void) getAddressFromLonGeocoder:(double)pdblLatitude withLongitude:(double)pdblLongitude completionHandler:(CLGeocodeCompletionHandler)completionHandler{
-    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:pdblLatitude longitude:pdblLongitude];
+    CLGeocoder * geoCoder = [[[CLGeocoder alloc] init] autorelease];
+    CLLocation *location = [[[CLLocation alloc] initWithLatitude:pdblLatitude longitude:pdblLongitude] autorelease];
     [geoCoder reverseGeocodeLocation:location completionHandler:completionHandler];
 
 }
@@ -79,8 +79,8 @@ static LocationService *instance = nil;
 }
 - (void) geocoding:(NSDictionary*) latlon{
     
-    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:[[latlon objectForKey:@"lat"] doubleValue] longitude:[[latlon objectForKey:@"lon"] doubleValue]];
+    CLGeocoder * geoCoder = [[[CLGeocoder alloc] init] autorelease];
+    CLLocation *location = [[[CLLocation alloc] initWithLatitude:[[latlon objectForKey:@"lat"] doubleValue] longitude:[[latlon objectForKey:@"lon"] doubleValue]] autorelease];
     
     [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {  
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
@@ -131,8 +131,8 @@ static LocationService *instance = nil;
 
 -(NSMutableArray*)allAddressFromLatLonGeocoder:(double)pdblLatitude withLongitude:(double)pdblLongitude{
     
-    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:pdblLatitude longitude:pdblLongitude];
+    CLGeocoder * geoCoder = [[[CLGeocoder alloc] init] autorelease];
+    CLLocation *location = [[[CLLocation alloc] initWithLatitude:pdblLatitude longitude:pdblLongitude] autorelease];
     static NSMutableArray *cityNames;
     
     [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {

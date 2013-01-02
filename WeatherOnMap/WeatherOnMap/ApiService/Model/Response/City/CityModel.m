@@ -10,4 +10,12 @@
 
 @implementation CityModel
 
+- (id)initWithDictionary:(NSDictionary *)params{
+    self = [super initWithDictionary:params];
+    if (self) {
+        
+    }
+    return self;
+}
+
 @end

@@ -34,14 +34,39 @@ static WeatherCurrentCache *instance = nil;
 
 }
 
-- (void) addWeatherModels:(NSArray*) weatherModels{
+- (BOOL) addWeatherModel:(WeatherModel*) weatherModel{
+    
+    if (![self.weatherKeys containsObject:[NSString stringWithFormat:@"%lld",weatherModel.identificator]]) {
+        [self.weathers setValue:weatherModel forKey:[NSString stringWithFormat:@"%lld",weatherModel.identificator]];
+        [self.weatherKeys addObject:[NSString stringWithFormat:@"%lld",weatherModel.identificator]];
+        return YES;
+    }else{
+        return NO;
+    }
+    
+}
+
+
+- (void) addWeatherBoxModels:(NSArray*) weatherModels{
     CFAbsoluteTime timeC = CFAbsoluteTimeGetCurrent();
 
     for (WeatherBoxModel *model in weatherModels) {
         [self addWeatherBoxModel:model];
     }
+    NSLog(@"time = %f", CFAbsoluteTimeGetCurrent()-timeC);
+}
+- (void) addWeatherModels:(NSArray*) weatherModels{
+    CFAbsoluteTime timeC = CFAbsoluteTimeGetCurrent();
+    
+    for (WeatherModel *model in weatherModels) {
+        [self addWeatherModel:model];
+    }
     
     NSLog(@"time = %f", CFAbsoluteTimeGetCurrent()-timeC);
-    NSLog(@"objects = %d", self.weathers.allValues.count);
+}
+
+- (void) clearCache{
+    [self.weathers removeAllObjects];
+    [self.weatherKeys removeAllObjects];
 }
 @end

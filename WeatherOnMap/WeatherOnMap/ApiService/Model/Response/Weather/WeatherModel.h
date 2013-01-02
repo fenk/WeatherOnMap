@@ -22,6 +22,7 @@
 @property(nonatomic, assign) double lat;
 @property(nonatomic, assign) double lon;
 @property(nonatomic, assign) long long dt;
+@property(nonatomic, copy) NSString *dtTxt;
 @property(nonatomic, assign) long long identificator;
 @property(nonatomic, copy) WeatherMain *main;
 @property(nonatomic, copy) NSString *name;

@@ -14,7 +14,10 @@
     if (self) {
         if (params) {
             if ([params valueForKey:@"all"]) self.all = [[params valueForKey:@"all"] integerValue];
-            
+            if ([params valueForKey:@"high"]) self.high = [[params valueForKey:@"high"] integerValue];
+            if ([params valueForKey:@"low"]) self.low = [[params valueForKey:@"low"] integerValue];
+            if ([params valueForKey:@"middle"]) self.middle = [[params valueForKey:@"middle"] integerValue];
+
             if ([params valueForKey:@"distance"]) self.distance = [[params valueForKey:@"distance"] doubleValue];
             self.condition = [params valueForKey:@"condition"];
             self.cumulus = [params valueForKey:@"cumulus"];
@@ -26,9 +29,12 @@
 - (id)copyWithZone:(NSZone *)zone{
     WeatherCloud *copy = [[WeatherCloud alloc] init];
     copy.all = self.all;
+    copy.high = self.high;
+    copy.low = self.low;
+    copy.middle = self.middle;
     copy.distance = self.distance;
-    copy.condition = [self.condition copy];
-    copy.cumulus = [self.cumulus copy];
+    copy.condition = self.condition;
+    copy.cumulus = self.cumulus;
     return copy;
 }
 - (NSString*) description{

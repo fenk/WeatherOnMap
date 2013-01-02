@@ -38,7 +38,7 @@ static WeatherOnMapService *instance = nil;
 
 
 - (void) getWeather:(WeatherRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller{
-    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_URL, @"station?"];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_URL, @"city?"];
     NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
     [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
 }
@@ -50,7 +50,7 @@ static WeatherOnMapService *instance = nil;
 
 
 - (void) getStation:(StationRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller{
-    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_URL, @"city?"];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_URL, @"station?"];
     NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
     [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
 }
@@ -61,9 +61,20 @@ static WeatherOnMapService *instance = nil;
     [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
 }
 
+- (void) getCityByIdentificator:(CityRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller{
+    NSString *url = [NSString stringWithFormat:@"%@%lld", API_ADDRESS_WEATHER_URL, request.identificator];
+    [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
+}
 
+- (void) findCityByName:(NSString*) cityName withCaller:(id<WeatherOnMapServiceDelegate>) caller{
+    CityRequestModel *request = [[[CityRequestModel alloc]init] autorelease];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_FIND_CITY_URL, @"station?"];
+    NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParametersWithCityName:cityName]];
+    [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
+}
 - (void) sendRequestWithUrl:(NSString*) urlString withRequestModel:(BasicRequestModel*) requestModel withCaller:(id) caller{
-    DebugLog(@"%@", urlString);
+    
+    DebugLog(@"%@",urlString);
     if (!self.mainQueue) {
         [self setMainQueue:[[[NSOperationQueue alloc] init] autorelease]];
     }
@@ -88,6 +99,8 @@ static WeatherOnMapService *instance = nil;
     if ([request.caller respondsToSelector:@selector(didReceiveResponse:)]) {
         [request.caller didReceiveResponse:responseModel];
     }
+    
+    
 }
 
 - (void)requestFinishedWithError:(ServiceHTTPRequest *)request
@@ -99,11 +112,15 @@ static WeatherOnMapService *instance = nil;
     }
 }
 
+- (void)cancelAllRequest{
+    [self.request clearDelegatesAndCancel];
+}
+
 - (void)dealloc
 {
     [self.request clearDelegatesAndCancel];
-    [self.request release];
-    [self.mainQueue release];
+    self.request = nil;
+    self.mainQueue = nil;
     [super dealloc];
 }
 

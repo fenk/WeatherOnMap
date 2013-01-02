@@ -26,7 +26,7 @@
         NSArray *list = [params valueForKey:@"list"];
         NSMutableArray *weathers = [NSMutableArray array];
         for (id obj in list) {
-            WeatherModel *weatherModel = [[WeatherModel alloc] initWithDictionary:obj];
+            WeatherModel *weatherModel = [[[WeatherModel alloc] initWithDictionary:obj] autorelease];
             [weathers addObject:weatherModel];
         }
         self.list = [NSArray arrayWithArray:weathers];

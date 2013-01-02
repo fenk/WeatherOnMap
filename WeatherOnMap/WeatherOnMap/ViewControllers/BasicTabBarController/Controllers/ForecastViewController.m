@@ -1,35 +1,27 @@
 //
-//  BasicViewController.m
+//  ForecastViewController.m
 //  WeatherOnMap
 //
-//  Created by Jacek Grygiel on 12/9/12.
+//  Created by Jacek Grygiel on 12/19/12.
 //  Copyright (c) 2012 Jacek Grygiel. All rights reserved.
 //
 
-#import "BasicViewController.h"
+#import "ForecastViewController.h"
 
+@interface ForecastViewController ()
 
-@interface BasicViewController ()
 @end
 
-@implementation BasicViewController
+@implementation ForecastViewController
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
+
     }
     return self;
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-
-}
-
-
-- (void) viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
 }
 
 - (void)viewDidLoad
@@ -43,11 +35,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-
-
-
 
 @end

@@ -9,12 +9,6 @@
 #import "WeatherAnnotation.h"
 
 @implementation WeatherAnnotation
-@synthesize weatherBoxModel = _weatherBoxModel;
-- (CLLocationCoordinate2D)coordinate {
-    return _coordinate;
-}
+@synthesize weatherModel = _weatherModel;
 
-- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
-    _coordinate = newCoordinate;
-}
 @end

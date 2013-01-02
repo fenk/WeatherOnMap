@@ -30,7 +30,7 @@
         double lon = [[[params valueForKey:@"coord"]valueForKey:@"lon"] doubleValue];
         self.lat = lat;
         self.lon = lon;
-        self.cloud = [[WeatherCloud alloc] initWithDictionary:[[params valueForKey:@"clouds"] objectAtIndex:0]];
+        self.cloud = [[[WeatherCloud alloc] initWithDictionary:[[params valueForKey:@"clouds"] objectAtIndex:0]] autorelease];
         self.type = [[params valueForKey:@"type"] integerValue];
         self.range = [[params valueForKey:@"range"] integerValue];
         self.distance = [[params valueForKey:@"distance"] doubleValue];
@@ -39,8 +39,8 @@
         self.main = [[[WeatherMain alloc] initWithDictionary:[params valueForKey:@"main"]] autorelease];
         self.name = [params valueForKey:@"name"];
         self.stationCondition = [[[StationConditionModel alloc] initWithDictionary:[params valueForKey:@"weather"]] autorelease];
-        self.weatherWind = [[WeatherWind alloc] initWithDictionary:[params valueForKey:@"wind"]];
-        self.visibility = [[WeatherVisibility alloc] initWithDictionary:[params valueForKey:@"visibility"]];
+        self.weatherWind = [[[WeatherWind alloc] initWithDictionary:[params valueForKey:@"wind"]] autorelease];
+        self.visibility = [[[WeatherVisibility alloc] initWithDictionary:[params valueForKey:@"visibility"]] autorelease];
     }
     return self;
 }

@@ -22,9 +22,14 @@
 		0503348B1675516400B7C7F4 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 050334881675516400B7C7F4 /* JSONKit.m */; };
 		0503348C1675516400B7C7F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 050334891675516400B7C7F4 /* README.md */; };
 		0503348E1675539800B7C7F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0503348D1675539800B7C7F4 /* MapKit.framework */; };
+		05263F60168DE1980074FD82 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05263F5F168DE1980074FD82 /* icon.png */; };
+		05263F63168DE1A80074FD82 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05263F62168DE1A80074FD82 /* icon@2x.png */; };
+		05263F66168DE58B0074FD82 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 05263F65168DE58B0074FD82 /* button.png */; };
 		0533D86D167FB58A00ACA1F6 /* CityRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0533D86C167FB58A00ACA1F6 /* CityRequestModel.m */; };
 		0533D872167FB63400ACA1F6 /* CityResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0533D871167FB63400ACA1F6 /* CityResponseModel.m */; };
 		0533D875167FB74B00ACA1F6 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0533D874167FB74B00ACA1F6 /* CityModel.m */; };
+		053893341694E0B700A9A818 /* ModalFadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 053893331694E0B700A9A818 /* ModalFadingView.m */; };
+		0538933C1694E2B300A9A818 /* SearchCityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538933B1694E2B300A9A818 /* SearchCityView.m */; };
 		05880947167E74B400DD7B15 /* StationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05880946167E74B400DD7B15 /* StationModel.m */; };
 		0588094B167E74C900DD7B15 /* StationConditionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0588094A167E74C900DD7B15 /* StationConditionModel.m */; };
 		05880957167E7C1400DD7B15 /* WeatherCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 05880956167E7C1400DD7B15 /* WeatherCloud.m */; };
@@ -35,6 +40,13 @@
 		05A15C06168141FF00E249C8 /* WeatherBoxResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C05168141FF00E249C8 /* WeatherBoxResponseModel.m */; };
 		05A15C091681422200E249C8 /* WeatherBoxRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C081681422200E249C8 /* WeatherBoxRequestModel.m */; };
 		05A15C0C1681431B00E249C8 /* WeatherBoxModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C0B1681431B00E249C8 /* WeatherBoxModel.m */; };
+		05A15C2F1682691900E249C8 /* BasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C2E1682691900E249C8 /* BasicTabBarController.m */; };
+		05A15C331682695200E249C8 /* LiveBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C321682695200E249C8 /* LiveBoxViewController.m */; };
+		05A15C361682696C00E249C8 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C351682696B00E249C8 /* ForecastViewController.m */; };
+		05A15C391682697F00E249C8 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C381682697F00E249C8 /* CityViewController.m */; };
+		05A15C3C1682713900E249C8 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C3B1682713800E249C8 /* LiveViewController.m */; };
+		05A15C3F1682727E00E249C8 /* BasicAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C3E1682727E00E249C8 /* BasicAnnotationView.m */; };
+		05A15C42168272F600E249C8 /* WeatherBoxAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A15C41168272F600E249C8 /* WeatherBoxAnnotation.m */; };
 		05CB27C01676739E0055121B /* WeatherMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB27BF1676739E0055121B /* WeatherMain.m */; };
 		05CB27C4167674070055121B /* WeatherWind.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB27C3167674070055121B /* WeatherWind.m */; };
 		05CB283D167682740055121B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 05CB2823167682740055121B /* LICENSE */; };
@@ -109,12 +121,19 @@
 		050334881675516400B7C7F4 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		050334891675516400B7C7F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0503348D1675539800B7C7F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		05263F5F168DE1980074FD82 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		05263F62168DE1A80074FD82 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		05263F65168DE58B0074FD82 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = ../../../../WeatherOnMap/graphics/button.png; sourceTree = "<group>"; };
 		0533D86B167FB58A00ACA1F6 /* CityRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityRequestModel.h; sourceTree = "<group>"; };
 		0533D86C167FB58A00ACA1F6 /* CityRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityRequestModel.m; sourceTree = "<group>"; };
 		0533D870167FB63400ACA1F6 /* CityResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityResponseModel.h; path = City/CityResponseModel.h; sourceTree = "<group>"; };
 		0533D871167FB63400ACA1F6 /* CityResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityResponseModel.m; path = City/CityResponseModel.m; sourceTree = "<group>"; };
 		0533D873167FB74B00ACA1F6 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityModel.h; path = City/CityModel.h; sourceTree = "<group>"; };
 		0533D874167FB74B00ACA1F6 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityModel.m; path = City/CityModel.m; sourceTree = "<group>"; };
+		053893321694E0B700A9A818 /* ModalFadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalFadingView.h; path = Views/Modal/ModalFadingView.h; sourceTree = "<group>"; };
+		053893331694E0B700A9A818 /* ModalFadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalFadingView.m; path = Views/Modal/ModalFadingView.m; sourceTree = "<group>"; };
+		0538933A1694E2B300A9A818 /* SearchCityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchCityView.h; path = ViewControllers/BasicTabBarController/Controllers/City/SearchCityView.h; sourceTree = "<group>"; };
+		0538933B1694E2B300A9A818 /* SearchCityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCityView.m; path = ViewControllers/BasicTabBarController/Controllers/City/SearchCityView.m; sourceTree = "<group>"; };
 		05880945167E74B400DD7B15 /* StationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationModel.h; path = Station/StationModel.h; sourceTree = "<group>"; };
 		05880946167E74B400DD7B15 /* StationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationModel.m; path = Station/StationModel.m; sourceTree = "<group>"; };
 		05880949167E74C900DD7B15 /* StationConditionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationConditionModel.h; path = Station/StationConditionModel.h; sourceTree = "<group>"; };
@@ -135,6 +154,20 @@
 		05A15C081681422200E249C8 /* WeatherBoxRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherBoxRequestModel.m; sourceTree = "<group>"; };
 		05A15C0A1681431B00E249C8 /* WeatherBoxModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherBoxModel.h; path = WeatherBox/WeatherBoxModel.h; sourceTree = "<group>"; };
 		05A15C0B1681431B00E249C8 /* WeatherBoxModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherBoxModel.m; path = WeatherBox/WeatherBoxModel.m; sourceTree = "<group>"; };
+		05A15C2D1682691900E249C8 /* BasicTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicTabBarController.h; path = ViewControllers/BasicTabBarController/BasicTabBarController.h; sourceTree = "<group>"; };
+		05A15C2E1682691900E249C8 /* BasicTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicTabBarController.m; path = ViewControllers/BasicTabBarController/BasicTabBarController.m; sourceTree = "<group>"; };
+		05A15C311682695200E249C8 /* LiveBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiveBoxViewController.h; path = ViewControllers/BasicTabBarController/Controllers/LiveBoxViewController.h; sourceTree = "<group>"; };
+		05A15C321682695200E249C8 /* LiveBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LiveBoxViewController.m; path = ViewControllers/BasicTabBarController/Controllers/LiveBoxViewController.m; sourceTree = "<group>"; };
+		05A15C341682696B00E249C8 /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForecastViewController.h; path = ViewControllers/BasicTabBarController/Controllers/ForecastViewController.h; sourceTree = "<group>"; };
+		05A15C351682696B00E249C8 /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastViewController.m; path = ViewControllers/BasicTabBarController/Controllers/ForecastViewController.m; sourceTree = "<group>"; };
+		05A15C371682697F00E249C8 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityViewController.h; path = ViewControllers/BasicTabBarController/Controllers/CityViewController.h; sourceTree = "<group>"; };
+		05A15C381682697F00E249C8 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityViewController.m; path = ViewControllers/BasicTabBarController/Controllers/CityViewController.m; sourceTree = "<group>"; };
+		05A15C3A1682713700E249C8 /* LiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiveViewController.h; path = ViewControllers/BasicTabBarController/Controllers/LiveViewController.h; sourceTree = "<group>"; };
+		05A15C3B1682713800E249C8 /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LiveViewController.m; path = ViewControllers/BasicTabBarController/Controllers/LiveViewController.m; sourceTree = "<group>"; };
+		05A15C3D1682727E00E249C8 /* BasicAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicAnnotationView.h; path = Views/BasicAnnotationView.h; sourceTree = "<group>"; };
+		05A15C3E1682727E00E249C8 /* BasicAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicAnnotationView.m; path = Views/BasicAnnotationView.m; sourceTree = "<group>"; };
+		05A15C40168272F600E249C8 /* WeatherBoxAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherBoxAnnotation.h; path = Views/WeatherBoxAnnotation.h; sourceTree = "<group>"; };
+		05A15C41168272F600E249C8 /* WeatherBoxAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherBoxAnnotation.m; path = Views/WeatherBoxAnnotation.m; sourceTree = "<group>"; };
 		05CB27BE1676739E0055121B /* WeatherMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherMain.h; path = Weather/WeatherMain.h; sourceTree = "<group>"; };
 		05CB27BF1676739E0055121B /* WeatherMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherMain.m; path = Weather/WeatherMain.m; sourceTree = "<group>"; };
 		05CB27C2167674070055121B /* WeatherWind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherWind.h; path = Weather/WeatherWind.h; sourceTree = "<group>"; };
@@ -342,6 +375,14 @@
 			path = ../../lib/json;
 			sourceTree = "<group>";
 		};
+		05263F64168DE5780074FD82 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				05263F65168DE58B0074FD82 /* button.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 		0533D86F167FB61900ACA1F6 /* City */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +398,8 @@
 			isa = PBXGroup;
 			children = (
 				0533D877167FBC0A00ACA1F6 /* Weather */,
+				05A15C3D1682727E00E249C8 /* BasicAnnotationView.h */,
+				05A15C3E1682727E00E249C8 /* BasicAnnotationView.m */,
 			);
 			name = Annotations;
 			sourceTree = "<group>";
@@ -366,8 +409,65 @@
 			children = (
 				0588095E167E8C8800DD7B15 /* WeatherAnnotation.h */,
 				0588095F167E8C8800DD7B15 /* WeatherAnnotation.m */,
+				05A15C40168272F600E249C8 /* WeatherBoxAnnotation.h */,
+				05A15C41168272F600E249C8 /* WeatherBoxAnnotation.m */,
 			);
 			name = Weather;
+			sourceTree = "<group>";
+		};
+		0538932E1694DF8E00A9A818 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				053893321694E0B700A9A818 /* ModalFadingView.h */,
+				053893331694E0B700A9A818 /* ModalFadingView.m */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		053893351694E12A00A9A818 /* LiveBox */ = {
+			isa = PBXGroup;
+			children = (
+				05A15C311682695200E249C8 /* LiveBoxViewController.h */,
+				05A15C321682695200E249C8 /* LiveBoxViewController.m */,
+			);
+			name = LiveBox;
+			sourceTree = "<group>";
+		};
+		053893361694E13500A9A818 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				05A15C3A1682713700E249C8 /* LiveViewController.h */,
+				05A15C3B1682713800E249C8 /* LiveViewController.m */,
+			);
+			name = Live;
+			sourceTree = "<group>";
+		};
+		053893371694E13900A9A818 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				053893391694E15800A9A818 /* SearchCity */,
+				05A15C371682697F00E249C8 /* CityViewController.h */,
+				05A15C381682697F00E249C8 /* CityViewController.m */,
+			);
+			name = City;
+			sourceTree = "<group>";
+		};
+		053893381694E13E00A9A818 /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				05A15C341682696B00E249C8 /* ForecastViewController.h */,
+				05A15C351682696B00E249C8 /* ForecastViewController.m */,
+			);
+			name = Forecast;
+			sourceTree = "<group>";
+		};
+		053893391694E15800A9A818 /* SearchCity */ = {
+			isa = PBXGroup;
+			children = (
+				0538933A1694E2B300A9A818 /* SearchCityView.h */,
+				0538933B1694E2B300A9A818 /* SearchCityView.m */,
+			);
+			name = SearchCity;
 			sourceTree = "<group>";
 		};
 		05A15C03168141BB00E249C8 /* WeatherBox */ = {
@@ -379,6 +479,27 @@
 				05A15C0B1681431B00E249C8 /* WeatherBoxModel.m */,
 			);
 			name = WeatherBox;
+			sourceTree = "<group>";
+		};
+		05A15C2B168268EC00E249C8 /* BasicTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				05A15C301682693300E249C8 /* Controllers */,
+				05A15C2D1682691900E249C8 /* BasicTabBarController.h */,
+				05A15C2E1682691900E249C8 /* BasicTabBarController.m */,
+			);
+			name = BasicTabBarController;
+			sourceTree = "<group>";
+		};
+		05A15C301682693300E249C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				053893381694E13E00A9A818 /* Forecast */,
+				053893371694E13900A9A818 /* City */,
+				053893361694E13500A9A818 /* Live */,
+				053893351694E12A00A9A818 /* LiveBox */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		05CB27C816767EC20055121B /* sdweb-image */ = {
@@ -513,6 +634,8 @@
 		B94F5B05163957FA00A5E3AB = {
 			isa = PBXGroup;
 			children = (
+				05263F62168DE1A80074FD82 /* icon@2x.png */,
+				05263F5F168DE1980074FD82 /* icon.png */,
 				B94F5B1A163957FA00A5E3AB /* WeatherOnMap */,
 				B94F5B13163957FA00A5E3AB /* Frameworks */,
 				B94F5B11163957FA00A5E3AB /* Products */,
@@ -549,6 +672,7 @@
 		B94F5B1A163957FA00A5E3AB /* WeatherOnMap */ = {
 			isa = PBXGroup;
 			children = (
+				05263F64168DE5780074FD82 /* Graphics */,
 				05CB284916768A020055121B /* LocationService */,
 				0503347316753BBC00B7C7F4 /* Config */,
 				05CFFC19166C2467002D344E /* External */,
@@ -613,6 +737,7 @@
 		B94F5B341639583900A5E3AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				05A15C2B168268EC00E249C8 /* BasicTabBarController */,
 				0503345A16751EAB00B7C7F4 /* BasicViewController */,
 			);
 			name = ViewControllers;
@@ -621,6 +746,7 @@
 		B94F5B351639584000A5E3AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0538932E1694DF8E00A9A818 /* Modal */,
 				0533D876167FBC0300ACA1F6 /* Annotations */,
 			);
 			name = Views;
@@ -687,6 +813,9 @@
 				0503348C1675516400B7C7F4 /* README.md in Resources */,
 				05CB283D167682740055121B /* LICENSE in Resources */,
 				05CB283E167682740055121B /* README.md in Resources */,
+				05263F60168DE1980074FD82 /* icon.png in Resources */,
+				05263F63168DE1A80074FD82 /* icon@2x.png in Resources */,
+				05263F66168DE58B0074FD82 /* button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +875,15 @@
 				05A15C06168141FF00E249C8 /* WeatherBoxResponseModel.m in Sources */,
 				05A15C091681422200E249C8 /* WeatherBoxRequestModel.m in Sources */,
 				05A15C0C1681431B00E249C8 /* WeatherBoxModel.m in Sources */,
+				05A15C2F1682691900E249C8 /* BasicTabBarController.m in Sources */,
+				05A15C331682695200E249C8 /* LiveBoxViewController.m in Sources */,
+				05A15C361682696C00E249C8 /* ForecastViewController.m in Sources */,
+				05A15C391682697F00E249C8 /* CityViewController.m in Sources */,
+				05A15C3C1682713900E249C8 /* LiveViewController.m in Sources */,
+				05A15C3F1682727E00E249C8 /* BasicAnnotationView.m in Sources */,
+				05A15C42168272F600E249C8 /* WeatherBoxAnnotation.m in Sources */,
+				053893341694E0B700A9A818 /* ModalFadingView.m in Sources */,
+				0538933C1694E2B300A9A818 /* SearchCityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
