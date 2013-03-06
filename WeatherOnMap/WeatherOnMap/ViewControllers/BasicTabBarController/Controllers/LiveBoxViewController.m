@@ -28,18 +28,15 @@
 {
     [super viewDidLoad];
     
-//    self.mapView = [[[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)] autorelease];
-//    self.mapView.delegate = self;
-//    self.mapView.showsUserLocation = YES;
-//    [self.view addSubview:self.mapView];
+    self.mapView = [[[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)] autorelease];
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    [self.view addSubview:self.mapView];
 
-    UIWebView *webview = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)] autorelease];
-    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://openweathermap.org/help/tiles.html?opacity=0.6&l=wind"]]];
-    [self.view addSubview:webview];
-    
-    
-    
-    
+//    UIWebView *webview = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)] autorelease];
+//    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://openweathermap.org/help/tiles.html?opacity=0.6&l=wind"]]];
+//    [self.view addSubview:webview];
+
 }
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -59,13 +56,11 @@
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
     
 }
+
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{    
     CLLocationCoordinate2D leftTop = [self.mapView convertPoint:CGPointMake(self.mapView.frame.origin.x, self.mapView.frame.origin.y) toCoordinateFromView:self.view];
     CLLocationCoordinate2D rightBottom = [self.mapView convertPoint:CGPointMake(self.mapView.frame.origin.x+self.mapView.frame.size.width, self.mapView.frame.origin.y+self.mapView.frame.size.height) toCoordinateFromView:self.view];
-    
     BBox bbox = BBoxMake(leftTop, rightBottom);
-    
-    
     WeatherBoxRequestModel *weatherRequest = [[WeatherBoxRequestModel alloc] init];
     weatherRequest.bbox = bbox;
     [[WeatherOnMapService sharedInstance] getWeatherByBBox:weatherRequest withCaller:self];
