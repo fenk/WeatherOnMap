@@ -5,3 +5,6 @@
 [submodule "lib/json"]
 	path = lib/json
 	url = https://github.com/johnezang/JSONKit.git
+[submodule "lib/sdweb-image"]
+	path = lib/sdweb-image
+	url = https://github.com/rs/SDWebImage.git
