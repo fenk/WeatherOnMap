@@ -7,7 +7,7 @@
 //
 
 #import "BasicViewController.h"
-#import "SearchCityView.h"
-@interface CityViewController : BasicViewController<WeatherOnMapServiceDelegate,MKMapViewDelegate, ModalFadingViewDelegate>
+#import "SearchCityViewController.h"
+@interface CityViewController : BasicViewController<WeatherOnMapServiceDelegate,MKMapViewDelegate, SearchCityViewControllerDelegate>
 
 @end

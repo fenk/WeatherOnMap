@@ -13,4 +13,5 @@
 #define API_ADDRESS_WEATHER_URL @"http://openweathermap.org/data/2.1/weather/"
 #define API_ADDRESS_RECT @"http://openweathermap.org/data/"
 #define API_WEATHER_CONDITION_IMG_URL @"http://openweathermap.org/img/w/"
-#define API_FIND_CITY_URL @"http://openweathermap.org/data/2.1/forecast/city/"
+#define API_FORECAST_CITY @"http://openweathermap.org/data/2.1/forecast/city/"
+#define API_FIND_CITY_URL @"http://api.openweathermap.org/data/2.1/find/"

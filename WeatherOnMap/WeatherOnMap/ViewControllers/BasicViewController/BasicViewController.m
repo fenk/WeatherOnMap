@@ -35,6 +35,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setTintColor:[ColorDefined navigationBarColor]];
+    self.view.backgroundColor = [ColorDefined backgroundColor];
 	// Do any additional setup after loading the view.
 }
 

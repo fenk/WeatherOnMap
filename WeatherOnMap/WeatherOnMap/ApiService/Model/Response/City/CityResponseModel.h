@@ -17,6 +17,6 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) int stationCount;
 @property (nonatomic, retain) NSString *url;
-
+@property (nonatomic, assign) long long population;
 
 @end

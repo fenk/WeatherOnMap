@@ -21,24 +21,29 @@
     if (self) {
         
         self.delegate = self;
-        
+        self.tabBar.tintColor = [ColorDefined tabbarColor];
         CityViewController *cityViewController = [[[CityViewController alloc] init] autorelease];
+        cityViewController.title = @"Weather in Cities";
         UINavigationController *cityNav = [[[UINavigationController alloc] initWithRootViewController: cityViewController] autorelease];
-        cityNav.tabBarItem.title = @"City";
+        cityNav.tabBarItem.title = @"Weather in Cities";
+        cityNav.tabBarItem.image = [UIImage imageNamed:@"icon_city.png"];
         
         LiveViewController *liveViewController = [[[LiveViewController alloc] init] autorelease];
+        liveViewController.title =  @"Live Weather";
+
         UINavigationController *liveNav = [[[UINavigationController alloc] initWithRootViewController:liveViewController] autorelease];
-        liveNav.tabBarItem.title = @"Live";
-        
-        LiveBoxViewController *liveBoxController = [[[LiveBoxViewController alloc] init] autorelease];
-        UINavigationController *liveboxNav = [[[UINavigationController alloc] initWithRootViewController:liveBoxController] autorelease];
-        liveboxNav.tabBarItem.title = @"Live Box";
+        liveNav.tabBarItem.title = @"Live Weather";
+        liveNav.tabBarItem.image = [UIImage imageNamed:@"icon_live.png"];
 
-        ForecastViewController *forecastViewController = [[[ForecastViewController alloc] init] autorelease];
-        UINavigationController *forecastNav = [[[UINavigationController alloc] initWithRootViewController:forecastViewController] autorelease];
-        forecastNav.tabBarItem.title = @"Forecast";
+//        LiveBoxViewController *liveBoxController = [[[LiveBoxViewController alloc] init] autorelease];
+//        UINavigationController *liveboxNav = [[[UINavigationController alloc] initWithRootViewController:liveBoxController] autorelease];
+//        liveboxNav.tabBarItem.title = @"Live Box";
+//
+//        ForecastViewController *forecastViewController = [[[ForecastViewController alloc] init] autorelease];
+//        UINavigationController *forecastNav = [[[UINavigationController alloc] initWithRootViewController:forecastViewController] autorelease];
+//        forecastNav.tabBarItem.title = @"Forecast";
 
-        [self setViewControllers:[NSArray arrayWithObjects:cityNav,liveNav, liveboxNav,forecastNav,nil]];
+        [self setViewControllers:[NSArray arrayWithObjects:cityNav,liveNav,nil]];
 
         
     }

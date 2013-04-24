@@ -68,7 +68,7 @@ static WeatherOnMapService *instance = nil;
 
 - (void) findCityByName:(NSString*) cityName withCaller:(id<WeatherOnMapServiceDelegate>) caller{
     CityRequestModel *request = [[[CityRequestModel alloc]init] autorelease];
-    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_FIND_CITY_URL, @"station?"];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_FIND_CITY_URL, @"name?"];
     NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParametersWithCityName:cityName]];
     [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
 }

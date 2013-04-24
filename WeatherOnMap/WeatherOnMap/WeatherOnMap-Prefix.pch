@@ -12,7 +12,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "Config.h"
-
+    #import "ColorDefined.h"
 #ifndef DebugLog
 #ifdef DEBUG
 /** Use it for logging only in Debug release */

@@ -39,4 +39,5 @@ typedef enum StationType {
 @property(nonatomic, copy) WeatherRain *rain;
 @property(nonatomic, copy) WeatherVisibility *visibility;
 - (id) initWithDictionary:(NSDictionary*) params;
+- (id) initForCityWithDictionary:(NSDictionary*) params;
 @end

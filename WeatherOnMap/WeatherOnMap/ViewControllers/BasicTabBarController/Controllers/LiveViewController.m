@@ -46,16 +46,26 @@
 }
 
 #pragma mark MapView delegates
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 45000, 45000);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    [self.mapView setRegion:adjustedRegion animated:YES];
+    self.mapView.showsUserLocation = NO;
+
+}
+
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
     
 }
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
     CLLocationCoordinate2D centre = [self.mapView convertPoint:self.mapView.center toCoordinateFromView:self.view];
+
     WeatherRequestModel *weatherRequest = [[WeatherRequestModel alloc] init];
     weatherRequest.latitude = centre.latitude;
     weatherRequest.longitude = centre.longitude;
-    weatherRequest.resultCountExpected = 100;
-    weatherRequest.radius = 100000.0;
+    weatherRequest.resultCountExpected = 500;
+    weatherRequest.radius = 10000.0;
     [[WeatherOnMapService sharedInstance] getWeather:weatherRequest withCaller:self];
     [weatherRequest release];
 }

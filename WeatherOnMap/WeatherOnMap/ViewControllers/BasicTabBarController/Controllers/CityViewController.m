@@ -28,18 +28,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem=[[[UIBarButtonItem alloc]initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(searchCity:)]autorelease];
+    [self setTitle:@"Weather in Cities"];
+    self.navigationItem.rightBarButtonItem=[[[UIBarButtonItem alloc]initWithTitle:@"Add City" style:UIBarButtonItemStylePlain target:self action:@selector(searchCity:)]autorelease];
     
 }
 
 - (void) searchCity:(id) sender{
-    SearchCityView *searchCityView = [[[SearchCityView alloc] init] autorelease];
-    searchCityView.delegate = self;
-    [searchCityView showInView:self.view];
+    SearchCityViewController *searchCityViewController = [[[SearchCityViewController alloc] init] autorelease];
+    searchCityViewController.delegate = self;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:searchCityViewController];
+    [self presentModalViewController:navigationController animated:YES];
 }
 
-- (void) findCityAction:(id) sender{
+
+- (void)searchCityViewController:(SearchCityViewController *)viewController didDismissWithData:(id)data{
+    [[[UIAlertView alloc] initWithTitle:@"City Model" message:[NSString stringWithFormat:@"%@", data] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -47,23 +52,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) didFilledDataChanged:(ModalFadingView*) modalSelectionView withData:(id) data{
-    
-    [[WeatherOnMapService sharedInstance] findCityByName:(NSString*)data withCaller:self];
 
-}
-- (void) didFilledDataCancelled:(ModalFadingView*) modalSelectionView{
-    
-
-}
-
-- (void) didReceiveError:(NSError*) error{
-    DebugLog(@"%@", error);
-}
-- (void) didReceiveResponse:(BasicResponseModel*) basicResponse{
-    
-    
-    
-}
 
 @end
