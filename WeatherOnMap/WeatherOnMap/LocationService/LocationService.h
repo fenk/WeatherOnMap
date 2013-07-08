@@ -1,6 +1,4 @@
 //
-//  ReccoLocationService.h
-//  recco-ios
 //
 //  Created by Jacek Grygiel on 8/29/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
@@ -30,13 +28,13 @@ typedef void (^CLLocationManagerCompletion)(CLLocation *newLocation,CLLocation *
 
 - (void) startUpdatingUserLocationWithInterval:(NSTimeInterval) seconds;
 - (void) stopUpdatingUserLocation;
--(NSString*)getAddressFromLatLonGeocoder:(double)pdblLatitude withLongitude:(double)pdblLongitude;
+- (NSString*)getAddressFromLatLonGeocoder:(double)pdblLatitude withLongitude:(double)pdblLongitude;
 - (void) getAddressFromLonGeocoder:(double)pdblLatitude withLongitude:(double)pdblLongitude completionHandler:(CLGeocodeCompletionHandler)completionHandler;
--(NSString*)getAddressFromLatLonGoogleAPI:(double)pdblLatitude withLongitude:(double)pdblLongitude;
--(NSMutableArray*)allAddressFromLatLonGeocoder:(double)pdblLatitude withLongitude:(double)pdblLongitude;
+- (NSString*)getAddressFromLatLonGoogleAPI:(double)pdblLatitude withLongitude:(double)pdblLongitude;
+- (NSMutableArray*)allAddressFromLatLonGeocoder:(double)pdblLatitude withLongitude:(double)pdblLongitude;
 - (NSString*) getCityNameForUserLocation;
 - (void) updateUserLocation;
-+(LocationService*) sharedInstance;
++ (LocationService*) sharedInstance;
 + (void)getUserLocationManager:(CLLocationManager*) locationManager WithCompletion:(CLLocationManagerCompletion) completion;
 
 @end
