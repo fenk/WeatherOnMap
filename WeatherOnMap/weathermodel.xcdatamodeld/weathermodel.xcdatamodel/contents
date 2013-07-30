@@ -34,6 +34,18 @@
         <attribute name="temp_max" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="temp_min" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
+    <entity name="CDWeatherRain" representedClassName="CDWeatherRain" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="one_hour" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="raw" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="six_hours" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="three_hours" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="twelve_hours" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="CDWeatherVisibility" representedClassName="CDWeatherVisibility" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="prefix" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="CDWeatherWind" representedClassName="CDWeatherWind" syncable="YES">
         <attribute name="degree" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="gust" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -42,10 +54,12 @@
         <attribute name="var_end" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CDWeatherCloud" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="CDWeatherCondition" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="CDWeatherInfo" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="CDWeatherMain" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="CDWeatherWind" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CDWeatherCloud" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="CDWeatherCondition" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="CDWeatherInfo" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="CDWeatherMain" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="CDWeatherWind" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="CDWeatherRain" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="CDWeatherVisibility" positionX="160" positionY="192" width="128" height="75"/>
     </elements>
 </model>

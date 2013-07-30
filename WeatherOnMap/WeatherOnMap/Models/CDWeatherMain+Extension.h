@@ -1,18 +1,15 @@
 //
-//  CDWeatherInfo+Extension.h
+//  CDWeatherMain+Extension.h
 //  WeatherOnMap
 //
 //  Created by Jacek Grygiel on 7/30/13.
 //  Copyright (c) 2013 Jacek Grygiel. All rights reserved.
 //
 
-#import "CDWeatherInfo.h"
-#import "BasicRequestModel.h"
+#import "CDWeatherMain.h"
 #import "CDObject+Extension.h"
 
-
-@interface CDWeatherInfo (Extension)
-+ (NSArray*) fetchWeathersFromBBox:(BBox) bbox;
+@interface CDWeatherMain (Extension)
 + (id) createObjectWithDictionary:(NSDictionary*) dictionary;
 - (void) fillWithDictionary:(NSDictionary*) dictionary;
 

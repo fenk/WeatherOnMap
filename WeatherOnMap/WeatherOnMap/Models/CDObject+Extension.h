@@ -12,4 +12,7 @@
 + (NSArray *)fetchObjectsOfClass:(__unsafe_unretained Class)aClass
                         sortedBy:(NSArray *)sortDescriptors
                     filterString:(NSString *)filterString;
+
++ (id) createNewObject;
+- (void) fillWithDictionary:(NSDictionary*) dictionary;
 @end

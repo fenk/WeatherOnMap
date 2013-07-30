@@ -30,4 +30,19 @@
     NSAssert(error == nil, @"Error while fetching object of class: %@ with error:%@", [aClass description], [error localizedDescription]);
     return fetchedObjects;
 }
+
++ (id) createNewObject{
+    Class class = [self class];
+    NSManagedObjectContext *context = [[AppDelegate sharedDelegate] managedObjectContext];
+
+    
+    id obj = [NSEntityDescription
+                       insertNewObjectForEntityForName:NSStringFromClass([self class])
+                       inManagedObjectContext:context];
+    return obj;
+}
+
+- (void) fillWithDictionary:(NSDictionary*) dictionary{
+    
+}
 @end
