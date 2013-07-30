@@ -7,8 +7,7 @@
 //
 
 #import "WeatherResponseModel.h"
-#import "WeatherModel.h"
-#import "CDWeatherInfo.h"
+#import "CDWeatherInfo+Extension.h"
 #import "AppDelegate.h"
 @implementation WeatherResponseModel
 
@@ -28,27 +27,22 @@
         NSArray *list = [params valueForKey:@"list"];
         NSMutableArray *weathers = [NSMutableArray array];
         for (id obj in list) {
-            WeatherModel *weatherModel = [[[WeatherModel alloc] initWithDictionary:obj] autorelease];
-            [weathers addObject:weatherModel];
             
-            
-            NSManagedObjectContext *context = self.context;
-            
-            NSArray *objects = [CDObject fetchObjectsOfClass:[CDWeatherInfo class] sortedBy:nil filterString:[NSString stringWithFormat:@"lat == %f AND lon == %f", weatherModel.lat, weatherModel.lon]];
-            
-            if (objects == nil) {
-                CDWeatherInfo *info = [NSEntityDescription
-                                       insertNewObjectForEntityForName:@"CDWeatherInfo"
-                                       inManagedObjectContext:context];
-                
-                info.lat = weatherModel.lat;
-                info.lon = weatherModel.lon;
-                info.name = weatherModel.name;
-                
-            }else{
 
+            double lat = [[[obj valueForKey:@"coord"]valueForKey:@"lat"] doubleValue];
+            double lon = [[[obj valueForKey:@"coord"]valueForKey:@"lon"] doubleValue];
+            
+            NSArray *objects = [CDObject fetchObjectsOfClass:[CDWeatherInfo class] sortedBy:nil filterString:[NSString stringWithFormat:@"lat == %f AND lon == %f", lat, lon]];
+            
+            if (objects.count == 0) {
+                CDWeatherInfo *weatherInfo = [CDWeatherInfo createObjectWithDictionary:obj];
+                [weathers addObject:weatherInfo];
+
+            }else{
+                [weathers addObject:[objects objectAtIndex:0]];
             }
         }
+        
         
         self.list = [NSArray arrayWithArray:weathers];
         

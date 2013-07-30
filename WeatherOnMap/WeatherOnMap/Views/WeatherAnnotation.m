@@ -9,6 +9,6 @@
 #import "WeatherAnnotation.h"
 
 @implementation WeatherAnnotation
-@synthesize weatherModel = _weatherModel;
+@synthesize weatherInfo = _weatherInfo;
 
 @end

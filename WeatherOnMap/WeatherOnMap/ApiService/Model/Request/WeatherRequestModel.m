@@ -25,6 +25,19 @@
     }
     
     
+    
+    return params;
+}
+
+- (NSDictionary*) createParametersBBox{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:@"55a83e1b65020a59b09fc40187f2d75b" forKey:@"APPID"];
+    if (self.cluster.boolValue) [params setValue:@"yes" forKey:@"cluster"];
+    else [params setValue:@"no" forKey:@"cluster"];
+    [params setValue:[NSString stringWithFormat:@"%f,%f,%f,%f, %d",self.bbox.leftTop.longitude,self.bbox.leftTop.latitude, self.bbox.rightBottom.longitude,self.bbox.rightBottom.latitude, 20] forKey:@"bbox"];
+    
+    
+    
     return params;
 }
 @end

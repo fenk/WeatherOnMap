@@ -10,18 +10,18 @@
 
 @implementation ColorDefined
 +(UIColor *)navigationBarColor{
-    return [UIColor colorWithRed:115/255.0 green:155/255.0 blue:115/255.0 alpha:1.0];
+    return [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0];
 }
 +(UIColor *)backgroundColor{
-    return [UIColor colorWithPatternImage:[UIImage imageNamed:@"background2.png"]];
+    return [UIColor colorWithRed:200/255.0 green:200/255.0 blue:200/255.0 alpha:1.0];
 }
 
 
 +(UIColor*) tabbarColor{
-    return [UIColor colorWithRed:82/255.0 green:131/255.0 blue:82/255.0 alpha:1.0];
+    return [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0];
 }
 
 +(UIColor*) tabbarDarkerColor{
-    return [UIColor colorWithRed:62/255.0 green:131/255.0 blue:62/255.0 alpha:1.0];
+    return [UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1.0];
 }
 @end

@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "BasicAnnotationView.h"
-#import "WeatherModel.h"
+#import "CDWeatherInfo.h"
 @interface WeatherAnnotation : BasicAnnotationView{
-    WeatherModel *_weatherModel;
+    CDWeatherInfo *_weatherInfo;
 }
-@property(nonatomic, retain) WeatherModel *weatherModel;
+@property(nonatomic, retain) CDWeatherInfo *weatherInfo;
 @end

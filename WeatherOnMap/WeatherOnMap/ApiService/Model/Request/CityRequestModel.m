@@ -15,6 +15,7 @@
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:[NSNumber numberWithDouble:self.latitude] forKey:@"q"];
+    [params setValue:@"imperial" forKey:@"units"];
     [params setValue:@"55a83e1b65020a59b09fc40187f2d75b" forKey:@"APPID"];
     return params;
 }
@@ -22,6 +23,7 @@
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:cityName forKey:@"q"];
+    [params setValue:@"imperial" forKey:@"units"];
     [params setValue:@"55a83e1b65020a59b09fc40187f2d75b" forKey:@"APPID"];
     return params;
 }

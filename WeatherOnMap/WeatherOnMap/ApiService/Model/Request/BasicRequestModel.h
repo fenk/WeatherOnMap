@@ -36,4 +36,5 @@ BBoxMake(CLLocationCoordinate2D leftTop, CLLocationCoordinate2D rightBottom)
 @property(nonatomic, assign) double radius;
 @property(nonatomic, assign) BBox bbox;
 
+@property(nonatomic, assign) BOOL forceReload;
 @end

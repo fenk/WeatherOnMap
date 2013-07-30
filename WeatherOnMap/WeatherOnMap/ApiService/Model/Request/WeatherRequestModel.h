@@ -9,5 +9,5 @@
 #import "BasicRequestModel.h"
 
 @interface WeatherRequestModel : BasicRequestModel
-
+- (NSDictionary*) createParametersBBox;
 @end

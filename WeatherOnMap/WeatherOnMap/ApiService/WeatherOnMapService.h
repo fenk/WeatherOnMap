@@ -21,8 +21,9 @@
 @protocol WeatherOnMapServiceDelegate;
 
 @protocol WeatherOnMapServiceDelegate <NSObject>
-- (void) didReceiveResponse:(BasicResponseModel*) basicResponse ;
+- (void) didReceiveResponse:(BasicResponseModel*) basicResponse fromCoreData:(BOOL) coreData;
 - (void) didReceiveError:(NSError*) error;
+
 @end
 
 @interface WeatherOnMapService : NSObject<WeatherOnMapServiceDelegate>
@@ -31,7 +32,7 @@
 - (void) cancelAllRequest;
 
 - (void) getWeather:(WeatherRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller;
-- (void) getWeatherByBBox:(WeatherBoxRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller;
+- (void) getWeatherByBBox:(WeatherRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller;
 - (void) getStation:(StationRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller;
 - (void) getCity:(CityRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller;
 - (void) findCityByName:(NSString*) cityName withCaller:(id<WeatherOnMapServiceDelegate>) caller;

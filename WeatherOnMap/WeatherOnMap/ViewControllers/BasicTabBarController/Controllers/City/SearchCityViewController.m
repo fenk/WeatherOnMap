@@ -7,7 +7,7 @@
 //
 
 #import "SearchCityViewController.h"
-#import "CityModel.h"
+#import "CDCityInfo.h"
 #import "CitySearchTableViewCell.h"
 #import <QuartzCore/QuartzCore.h>
 @interface SearchCityViewController ()
@@ -47,7 +47,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CitySearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CitySearchTableViewCell defaultDequeueDescription]];
-    CityModel *cityModel = [self.orginalData objectAtIndex:indexPath.row];
+    CDCityInfo *cityInfo = [self.orginalData objectAtIndex:indexPath.row];
     if (cell == nil) {
         cell = [[CitySearchTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[CitySearchTableViewCell defaultDequeueDescription]];
 
@@ -75,8 +75,8 @@
 //        [cell.layer insertSublayer:gradient atIndex:0];
         
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",cityModel.name];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Country Code: %@, Population: %lld", cityModel.country, cityModel.population];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",cityInfo.name];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Country Code: %@, Population: %lld", cityInfo.country, cityInfo.population];
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
     cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12.0];
 
@@ -107,7 +107,7 @@
     [self selectCity:[self.orginalData objectAtIndex:addButton.tag]];
 }
 
-- (void) selectCity:(CityModel*) city{
+- (void) selectCity:(CDCityInfo*) city{
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(searchCityViewController:didDismissWithData:)]) {
         [self.delegate searchCityViewController:self didDismissWithData:city];
@@ -119,7 +119,7 @@
     DebugLog(@"%@", error);
     
 }
-- (void) didReceiveResponse:(BasicResponseModel*) basicResponse{
+- (void) didReceiveResponse:(BasicResponseModel*) basicResponse fromCoreData:(BOOL)coreData{
     
     [self.findCityTextField resignFirstResponder];
     

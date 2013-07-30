@@ -13,7 +13,7 @@
     
     CDWeatherMain *weatherMain = (CDWeatherMain*)[self createNewObject];
     [weatherMain fillWithDictionary:dictionary];
-
+    return weatherMain;
 }
 
 - (void) fillWithDictionary:(NSDictionary*) dictionary{

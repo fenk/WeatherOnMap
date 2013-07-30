@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CDCityData" representedClassName="CDCityData" syncable="YES">
+        <attribute name="area_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postal_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CDCityDetail" representedClassName="CDCityDetail" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="population" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CDCityInfo" representedClassName="CDCityInfo" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identificator" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="population" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="station_count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CDStationInfo" representedClassName="CDStationInfo" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dt" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="identificator" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="range" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="cloud" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherCloud" syncable="YES"/>
+        <relationship name="condition" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherCondition" syncable="YES"/>
+        <relationship name="main" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherMain" syncable="YES"/>
+        <relationship name="rain" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherRain" syncable="YES"/>
+        <relationship name="visibility" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherVisibility" syncable="YES"/>
+        <relationship name="wind" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherWind" syncable="YES"/>
+    </entity>
     <entity name="CDWeatherCloud" representedClassName="CDWeatherCloud" syncable="YES">
         <attribute name="all" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="condition" optional="YES" attributeType="String" syncable="YES"/>
@@ -61,5 +101,9 @@
         <element name="CDWeatherWind" positionX="0" positionY="0" width="128" height="120"/>
         <element name="CDWeatherRain" positionX="160" positionY="192" width="128" height="135"/>
         <element name="CDWeatherVisibility" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="CDStationInfo" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="CDCityInfo" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="CDCityDetail" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="CDCityData" positionX="160" positionY="192" width="128" height="150"/>
     </elements>
 </model>

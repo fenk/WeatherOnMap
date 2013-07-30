@@ -8,7 +8,7 @@
 
 #import "BasicViewController.h"
 #import "WeatherOnMapService.h"
-
-@interface LiveBoxViewController : BasicViewController<WeatherOnMapServiceDelegate,MKMapViewDelegate>
+#import "RNGridMenu.h"
+@interface LiveBoxViewController : BasicViewController<WeatherOnMapServiceDelegate,MKMapViewDelegate,RNGridMenuDelegate>
 
 @end

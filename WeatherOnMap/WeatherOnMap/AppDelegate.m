@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "LiveBoxViewController.h"
+#import "CHCSVParser.h"
+#import "CDCityData+Extension.h"
 
 @implementation AppDelegate
 @synthesize tabBarController = _tabBarController;
@@ -20,10 +23,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    self.tabBarController = [[[BasicTabBarController alloc] init] autorelease];
-    self.window.rootViewController = self.tabBarController;
+//    self.tabBarController = [[[BasicTabBarController alloc] init] autorelease];
+    LiveBoxViewController *liveBoxViewController = [[LiveBoxViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:liveBoxViewController];
+    liveBoxViewController.navigationItem.rightBarButtonItem=[[[UIBarButtonItem alloc]initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:liveBoxViewController action:@selector(showSettings:)]autorelease];
+    
+    self.window.rootViewController = navigationController;
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -97,6 +105,21 @@
     return persistentStoreCoordinator;
 }
 
+- (void) readCSV{
+    NSString *file = [[NSBundle bundleForClass:[self class]] pathForResource:@"GeoLiteCity-Location" ofType:@"csv"];
+	NSArray *readFromFile = [NSArray arrayWithContentsOfCSVFile:file];
+    
+    for (NSArray *array in readFromFile) {
+        NSArray *objects = [CDCityData fetchObjectsOfClass:[CDCityData class] sortedBy:nil filterString:[NSString stringWithFormat:@"name == '%@'",[array objectAtIndex:2]]];
+        if (objects.count == 0 && array.count > 7) {
+            CDCityData *cityData = [CDCityData createObjectWithDictionary:array];
+            NSLog(@"%@", cityData);
+        }
+    }
+    
+    [self saveContext];
+
+}
 
 - (void) saveContext {
     NSManagedObjectContext *context = [self managedObjectContext];

@@ -7,7 +7,6 @@
 //
 
 #import "StationResponseModel.h"
-#import "StationModel.h"
 
 @implementation StationResponseModel
 
@@ -20,13 +19,7 @@
         self.cod = [[params valueForKey:@"cod"] integerValue];
         self.message = [params valueForKey:@"message"];
         
-        NSArray *list = [params valueForKey:@"list"];
-        NSMutableArray *stations = [NSMutableArray array];
-        for (id obj in list) {
-            StationModel *stationModel = [[[StationModel alloc] initWithDictionary:obj] autorelease];
-            [stations addObject:stationModel];
-        }
-        self.list = [NSArray arrayWithArray:stations];
+
     }
     return self;
 }

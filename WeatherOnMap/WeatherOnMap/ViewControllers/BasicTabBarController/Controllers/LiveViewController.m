@@ -7,7 +7,9 @@
 //
 
 #import "LiveViewController.h"
-#import "WeatherModel.h"
+#import "CDWeatherInfo.h"
+#import "CDWeatherCondition.h"
+#import "UIImageView+WebCache.h"
 @interface LiveViewController ()
 @property(nonatomic, retain) MKMapView *mapView;
 @end
@@ -36,7 +38,6 @@
 - (void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [[WeatherCurrentCache sharedInstance] clearCache];
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,7 +78,9 @@
     
     static NSString* weatherAnnotationIdentifier = @"weatherAnnotationIdentifier";
     WeatherAnnotation *weatherAnnotation = (WeatherAnnotation*) annotation;
-    UIImageView *img = weatherAnnotation.weatherModel.weatherCondition.icon;
+    UIImageView *img = [[UIImageView alloc] init];
+    [img setImageWithURL:[NSURL URLWithString:weatherAnnotation.weatherInfo.condition.icon]];
+    
     MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:weatherAnnotationIdentifier];
     
     if (annotationView == nil)
@@ -98,21 +101,21 @@
 - (void) didReceiveError:(NSError*) error{
     DebugLog(@"%@", error);
 }
-- (void) didReceiveResponse:(BasicResponseModel*) basicResponse{
+- (void) didReceiveResponse:(BasicResponseModel*) basicResponse fromCoreData:(BOOL)coreData{
     CFAbsoluteTime timeC = CFAbsoluteTimeGetCurrent();
     WeatherResponseModel *response = (WeatherResponseModel*) basicResponse;
     
-    NSMutableArray *annotations = [NSMutableArray array];
-    for (WeatherModel *weather in response.list) {
-        if ([[WeatherCurrentCache sharedInstance] addWeatherModel:weather]){
-            WeatherAnnotation *annotation = [[[WeatherAnnotation alloc] init] autorelease];
-            [annotation setCoordinate:CLLocationCoordinate2DMake(weather.lat, weather.lon)];
-            annotation.weatherModel = weather;
-            [annotations addObject:annotation];
-        }
-    }
+//    NSMutableArray *annotations = [NSMutableArray array];
+//    for (WeatherModel *weather in response.list) {
+//        if ([[WeatherCurrentCache sharedInstance] addWeatherModel:weather]){
+//            WeatherAnnotation *annotation = [[[WeatherAnnotation alloc] init] autorelease];
+//            [annotation setCoordinate:CLLocationCoordinate2DMake(weather.lat, weather.lon)];
+//            annotation.weatherModel = weather;
+//            [annotations addObject:annotation];
+//        }
+//    }
     
-    [self.mapView addAnnotations:annotations];
+//    [self.mapView addAnnotations:annotations];
     NSLog(@"time = %f", CFAbsoluteTimeGetCurrent()-timeC);
     
 }

@@ -9,8 +9,14 @@
 #import "LiveBoxViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AnnotationButton.h"
+#import "CDWeatherCondition.h"
+#import "CDWeatherInfo.h"
+#import "UIImageView+WebCache.h"
+#import "AppDelegate.h"
+
 @interface LiveBoxViewController ()
 @property(nonatomic, retain) MKMapView *mapView;
+@property(nonatomic, assign) BOOL autoReload;
 @end
 
 @implementation LiveBoxViewController
@@ -20,10 +26,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        WeatherBoxRequestModel *weatherRequest = [[WeatherBoxRequestModel alloc] init];
-        weatherRequest.bbox = BBoxMake(CLLocationCoordinate2DMake(90,-180.0), CLLocationCoordinate2DMake(-90, 180));
-        [[WeatherOnMapService sharedInstance] getWeatherByBBox:weatherRequest withCaller:self];
-        [weatherRequest release];
+
     }
     return self;
 }
@@ -38,7 +41,7 @@
     self.mapView.showsUserLocation = YES;
     [self.view addSubview:self.mapView];
 
-
+    self.autoReload = YES;
     
 
 }
@@ -46,7 +49,13 @@
 - (void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [[WeatherCurrentCache sharedInstance] clearCache];
+    WeatherRequestModel *weatherRequest = [[WeatherRequestModel alloc] init];
+    weatherRequest.bbox = BBoxMake(CLLocationCoordinate2DMake(90,-180.0), CLLocationCoordinate2DMake(-90, 180));
+    [[WeatherOnMapService sharedInstance] getWeatherByBBox:weatherRequest withCaller:self];
+    [weatherRequest release];
+    
+    
+    [[AppDelegate sharedDelegate] readCSV];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,14 +70,25 @@
     
 }
 
-- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{    
+- (void) reloadAnnotation:(BOOL) force{
     CLLocationCoordinate2D leftTop = [self.mapView convertPoint:CGPointMake(self.mapView.frame.origin.x, self.mapView.frame.origin.y) toCoordinateFromView:self.view];
     CLLocationCoordinate2D rightBottom = [self.mapView convertPoint:CGPointMake(self.mapView.frame.origin.x+self.mapView.frame.size.width, self.mapView.frame.origin.y+self.mapView.frame.size.height) toCoordinateFromView:self.view];
     BBox bbox = BBoxMake(leftTop, rightBottom);
-    WeatherBoxRequestModel *weatherRequest = [[WeatherBoxRequestModel alloc] init];
+    
+    WeatherRequestModel *weatherRequest = [[WeatherRequestModel alloc] init];
     weatherRequest.bbox = bbox;
+    weatherRequest.forceReload = force;
+    weatherRequest.cluster = [NSNumber numberWithBool:YES];
+    
     [[WeatherOnMapService sharedInstance] getWeatherByBBox:weatherRequest withCaller:self];
     [weatherRequest release];
+
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    if (self.autoReload) {
+        [self reloadAnnotation:NO];
+    }
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
@@ -82,7 +102,9 @@
     
     static NSString* weatherAnnotationIdentifier = @"weatherAnnotationIdentifier";
     WeatherAnnotation *weatherAnnotation = (WeatherAnnotation*) annotation;
-    UIImageView *img = weatherAnnotation.weatherModel.weatherCondition.icon;
+    UIImageView *img = [[UIImageView alloc] init];
+    [img setImageWithURL:[NSURL URLWithString:weatherAnnotation.weatherInfo.condition.icon]];
+    
     MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:weatherAnnotationIdentifier];
     
     if (annotationView == nil)
@@ -109,7 +131,7 @@
     AnnotationButton *button = (AnnotationButton*)sender;
     WeatherAnnotation *annotation = (WeatherAnnotation*) button.model;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Details" message:annotation.weatherModel.description delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Details" message:annotation.weatherInfo.description delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil];
     [alert show
      ];
     [alert release];
@@ -118,29 +140,81 @@
 - (void) didReceiveError:(NSError*) error{
     DebugLog(@"%@", error);
 }
-- (void) didReceiveResponse:(BasicResponseModel*) basicResponse{
-    CFAbsoluteTime timeC = CFAbsoluteTimeGetCurrent();
-    WeatherResponseModel *response = (WeatherResponseModel*) basicResponse;
-    DebugLog(@"%d", response.list.count);
 
-    time_t unixTime = (time_t) [[NSDate date] timeIntervalSince1970];
-
-    
-    NSMutableArray *annotations = [NSMutableArray array];
-    for (WeatherModel *model in response.list) {
-        NSLog(@"%ld minutes",(long)(unixTime - model.dt)/60);
-
-        if ([[WeatherCurrentCache sharedInstance] addWeatherModel:model]){
+- (void) didReceiveResponse:(BasicResponseModel*) basicResponse fromCoreData:(BOOL)coreData{
+    if (coreData == NO || self.mapView.annotations.count == 0) {
+        CFAbsoluteTime timeC = CFAbsoluteTimeGetCurrent();
+        WeatherResponseModel *response = (WeatherResponseModel*) basicResponse;
+        DebugLog(@"%d", response.list.count);
+        
+        time_t unixTime = (time_t) [[NSDate date] timeIntervalSince1970];
+        
+        
+        NSMutableArray *annotations = [NSMutableArray array];
+        for (CDWeatherInfo *model in response.list) {
+            NSLog(@"%ld minutes",(long)(unixTime - model.dt)/60);
             WeatherAnnotation *annotation = [[[WeatherAnnotation alloc] init] autorelease];
             [annotation setCoordinate:CLLocationCoordinate2DMake(model.lat, model.lon)];
-            annotation.weatherModel = model;
+            annotation.weatherInfo = model;
             [annotations addObject:annotation];
+            
         }
+        
+        [self.mapView addAnnotations:annotations];
+        NSLog(@"time = %f", CFAbsoluteTimeGetCurrent()-timeC);
     }
-    
-    [self.mapView addAnnotations:annotations];
-    NSLog(@"time = %f", CFAbsoluteTimeGetCurrent()-timeC);
+   
     
 }
+
+
+#pragma  mark show Settings
+
+- (void) showSettings:(id) sender{
+    NSString *autoReloadString = nil;
+    if (self.autoReload == NO) {
+        autoReloadString = @"Enable Autoreload Weather";
+    }else{
+        autoReloadString = @"Disable Autoreload Weather";
+
+    }
+    NSArray *options = @[@"Search City", @"Show found cities", @"Force Reload", @"Clear all annotations", autoReloadString];
+    RNGridMenu *av = [[RNGridMenu alloc] initWithTitles:options];
+    [av setItemSize:CGSizeMake(200, 200)];
+    [av setItemFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0 ]];
+    av.delegate = self;
+    [av setMenuStyle:RNGridMenuStyleGrid];
+    [av setBounces:YES];
+    [av showInViewController:self center:self.view.center];
+}
+
+- (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex{
+    if (itemIndex == 0) {
+
+    }
+    if (itemIndex == 1) {
+        
+    }
+    if (itemIndex == 2) {
+        [self reloadAnnotation:YES];
+    }
+    if (itemIndex == 3) {
+        NSInteger toRemoveCount = self.mapView.annotations.count;
+        NSMutableArray *toRemove = [NSMutableArray arrayWithCapacity:toRemoveCount];
+        for (id annotation in self.mapView.annotations)
+            if (annotation != self.mapView.userLocation)
+                [toRemove addObject:annotation];
+        [self.mapView removeAnnotations:toRemove];
+    }
+    if (itemIndex == 4) {
+        if (self.autoReload) {
+            self.autoReload = NO;
+        }else{
+            self.autoReload = YES;
+            [self reloadAnnotation:YES];
+        }
+    }
+}
+
 
 @end

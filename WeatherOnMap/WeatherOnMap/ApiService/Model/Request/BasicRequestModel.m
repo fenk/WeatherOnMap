@@ -14,11 +14,12 @@
 @synthesize radius = _radius;
 @synthesize cluster = _cluster;
 @synthesize resultCountExpected = _resultCountExpected;
-
+@synthesize forceReload = _forceReload;
 - (id)init
 {
     self = [super init];
     if (self) {
+        self.forceReload = NO;
     }
     return self;
 }

@@ -29,12 +29,6 @@ static ParserResponseService *instance = nil;
         
         return weatherResponse;
         
-    }else if (classModel == [WeatherBoxRequestModel class]) {
-        
-        WeatherResponseModel *weatherResponse = [[[WeatherResponseModel alloc] initWithDictionary:deserializedData] autorelease];
-        
-        return weatherResponse;
-        
     }else if (classModel == [StationRequestModel class]){
         
         StationResponseModel *stationResponse = [[[StationResponseModel alloc] initWithDictionary:deserializedData] autorelease];

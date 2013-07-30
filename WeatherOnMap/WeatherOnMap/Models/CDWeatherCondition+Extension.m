@@ -20,7 +20,8 @@
     self.description_weather = [[dictionary valueForKey:@"description"] objectAtIndex:0];
     NSString *url = [self urlIcon:[[dictionary valueForKey:@"icon"] objectAtIndex:0]];
     self.icon = url;
-    self.main = [dictionary valueForKey:@"main"];
+    
+    self.main =  [[dictionary valueForKey:@"main"] objectAtIndex:0];
 
 }
 

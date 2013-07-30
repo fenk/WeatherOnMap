@@ -13,6 +13,8 @@
 
 #import "CDWeatherInfo+Extension.h"
 
+#define MIN_OBJECTS 30
+
 @interface WeatherOnMapService ()
 
 @property(nonatomic,retain) NSOperationQueue *mainQueue;
@@ -44,21 +46,17 @@ static WeatherOnMapService *instance = nil;
     NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
     [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
 }
-//- (void) getWeatherByBBox:(WeatherBoxRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller{
-//    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_RECT, @"getrect?"];
-//    NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
-//    [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
-//}
-- (void) getWeatherByBBox:(WeatherBoxRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller{
+
+- (void) getWeatherByBBox:(WeatherRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller{
     NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_FIND_CITY_URL, @"city?"];
-    NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
-    
+    NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParametersBBox]];
+
     NSArray *objects = [CDWeatherInfo fetchWeathersFromBBox:request.bbox];
-    if (objects.count) {
+    if (objects.count > MIN_OBJECTS && request.forceReload == NO) {
         BasicResponseModel *responseModel = [[BasicResponseModel alloc] init];
         responseModel.list = objects;
-        if ([caller respondsToSelector:@selector(didReceiveResponse:)]) {
-            [caller didReceiveResponse:responseModel];
+        if ([caller respondsToSelector:@selector(didReceiveResponse:fromCoreData:)]) {
+            [caller didReceiveResponse:responseModel fromCoreData:YES];
         }
     }else{
         [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
@@ -112,8 +110,8 @@ static WeatherOnMapService *instance = nil;
     
     BasicResponseModel *responseModel = [[ParserResponseService sharedInstance] parseJsonString:response forExpectedClassModel:[request.requestModel class]];
     
-    if ([request.caller respondsToSelector:@selector(didReceiveResponse:)]) {
-        [request.caller didReceiveResponse:responseModel];
+    if ([request.caller respondsToSelector:@selector(didReceiveResponse:fromCoreData:)]) {
+        [request.caller didReceiveResponse:responseModel fromCoreData:NO];
     }
     
     
