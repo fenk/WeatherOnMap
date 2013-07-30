@@ -16,9 +16,9 @@
 #import <Foundation/Foundation.h>
 #import "ASIHTTPRequest.h"
 #import "Models.h"
+#import "BasicResponseModel.h"
 
-
-
+@protocol WeatherOnMapServiceDelegate;
 
 @protocol WeatherOnMapServiceDelegate <NSObject>
 - (void) didReceiveResponse:(BasicResponseModel*) basicResponse ;

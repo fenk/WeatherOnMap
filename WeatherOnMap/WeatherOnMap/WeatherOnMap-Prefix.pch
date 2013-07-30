@@ -13,6 +13,8 @@
     #import <Foundation/Foundation.h>
     #import "Config.h"
     #import "ColorDefined.h"
+    #import <CoreData/CoreData.h>
+
 #ifndef DebugLog
 #ifdef DEBUG
 /** Use it for logging only in Debug release */

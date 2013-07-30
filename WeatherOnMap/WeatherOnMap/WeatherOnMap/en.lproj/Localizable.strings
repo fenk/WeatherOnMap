@@ -1,0 +1,4 @@
+/* Localized versions of Info.plist keys */
+
+"find.city.title" = "Search";
+"find.city.add" = "Add";

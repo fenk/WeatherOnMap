@@ -7,6 +7,7 @@
 //
 
 #import "BasicViewController.h"
+#import "WeatherOnMapService.h"
 
 @interface LiveBoxViewController : BasicViewController<WeatherOnMapServiceDelegate,MKMapViewDelegate>
 

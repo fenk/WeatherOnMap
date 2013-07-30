@@ -9,6 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "BasicTabBarController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+}
+
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (NSString *)applicationDocumentsDirectory;
+- (void) saveContext;
+
++ (AppDelegate *)sharedDelegate;
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) BasicTabBarController *tabBarController;

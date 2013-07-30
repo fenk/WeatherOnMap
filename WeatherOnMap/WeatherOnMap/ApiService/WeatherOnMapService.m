@@ -10,6 +10,9 @@
 #import "NSDictionary+UrlEncoding.h"
 #import "ParserResponseService.h"
 #import "ServiceHTTPRequest.h"
+
+#import "CDWeatherInfo+Extension.h"
+
 @interface WeatherOnMapService ()
 
 @property(nonatomic,retain) NSOperationQueue *mainQueue;
@@ -36,18 +39,31 @@ static WeatherOnMapService *instance = nil;
     return [base stringByAppendingString:[params urlEncodedString]];
 }
 
-
 - (void) getWeather:(WeatherRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller{
     NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_URL, @"city?"];
     NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
     [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
 }
+//- (void) getWeatherByBBox:(WeatherBoxRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller{
+//    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_RECT, @"getrect?"];
+//    NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
+//    [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
+//}
 - (void) getWeatherByBBox:(WeatherBoxRequestModel *)request withCaller:(id<WeatherOnMapServiceDelegate>)caller{
-    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_RECT, @"getrect?"];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_FIND_CITY_URL, @"city?"];
     NSString *url = [self joinBaseUrl:baseUrl withDictionaryParams:[request createParameters]];
-    [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
+    
+    NSArray *objects = [CDWeatherInfo fetchWeathersFromBBox:request.bbox];
+    if (objects.count) {
+        BasicResponseModel *responseModel = [[BasicResponseModel alloc] init];
+        responseModel.list = objects;
+        if ([caller respondsToSelector:@selector(didReceiveResponse:)]) {
+            [caller didReceiveResponse:responseModel];
+        }
+    }else{
+        [self sendRequestWithUrl:url withRequestModel:request withCaller:caller];
+    }
 }
-
 
 - (void) getStation:(StationRequestModel*) request withCaller:(id<WeatherOnMapServiceDelegate>) caller{
     NSString *baseUrl = [NSString stringWithFormat:@"%@%@", API_ADDRESS_URL, @"station?"];
@@ -99,6 +115,7 @@ static WeatherOnMapService *instance = nil;
     if ([request.caller respondsToSelector:@selector(didReceiveResponse:)]) {
         [request.caller didReceiveResponse:responseModel];
     }
+    
     
     
 }

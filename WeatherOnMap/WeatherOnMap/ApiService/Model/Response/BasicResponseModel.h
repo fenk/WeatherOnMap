@@ -13,5 +13,6 @@
 @property(nonatomic, assign) int cod;
 @property(nonatomic, copy) NSString *message;
 @property(nonatomic, copy) NSArray *list;
+@property(nonatomic, retain) NSManagedObjectContext *context;
 - (id) initWithDictionary:(NSDictionary*) params;
 @end

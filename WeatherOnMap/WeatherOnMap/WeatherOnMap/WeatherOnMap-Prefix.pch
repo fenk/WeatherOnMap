@@ -1,0 +1,31 @@
+//
+// Prefix header for all source files of the 'WeatherOnMap' target in the 'WeatherOnMap' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "Config.h"
+    #import "ColorDefined.h"
+#ifndef DebugLog
+#ifdef DEBUG
+/** Use it for logging only in Debug release */
+#define DebugLog( s, ... ) NSLog( @"<%p %@:(%d)> %s: %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, __PRETTY_FUNCTION__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DebugLog( s, ... )
+#endif
+#endif
+#endif
+
+
+#define IS_IPHONE ( [[[UIDevice currentDevice] model] isEqualToString:@"iPhone"] )
+#define IS_IPOD   ( [[[UIDevice currentDevice ] model] isEqualToString:@"iPod touch"] )
+#define IS_HEIGHT_GTE_568 [[UIScreen mainScreen ] bounds].size.height >= 568.0f
+#define IS_IPHONE_5 ( IS_IPHONE && IS_HEIGHT_GTE_568 )
+

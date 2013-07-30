@@ -8,6 +8,8 @@
 
 #import "BasicViewController.h"
 @class SearchCityViewController;
+@protocol WeatherOnMapServiceDelegate;
+
 
 @protocol SearchCityViewControllerDelegate <NSObject>
 

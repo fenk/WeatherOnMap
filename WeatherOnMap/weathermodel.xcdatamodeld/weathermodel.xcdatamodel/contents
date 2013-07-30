@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CDWeatherCloud" representedClassName="CDWeatherCloud" syncable="YES">
+        <attribute name="all" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="condition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cumulus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="high" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="low" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="middle" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="CDWeatherCondition" representedClassName="CDWeatherCondition" syncable="YES">
+        <attribute name="description_weather" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="main" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CDWeatherInfo" representedClassName="CDWeatherInfo" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dt" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="dtTxt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identificator" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cloud" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherCloud" syncable="YES"/>
+        <relationship name="condition" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherCondition" syncable="YES"/>
+        <relationship name="main" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherMain" syncable="YES"/>
+        <relationship name="wind" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherWind" syncable="YES"/>
+    </entity>
+    <entity name="CDWeatherMain" representedClassName="CDWeatherMain" syncable="YES">
+        <attribute name="humidity" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="pressure" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="temp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="temp_max" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="temp_min" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="CDWeatherWind" representedClassName="CDWeatherWind" syncable="YES">
+        <attribute name="degree" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="gust" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="var_begin" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="var_end" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDWeatherCloud" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CDWeatherCondition" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CDWeatherInfo" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CDWeatherMain" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CDWeatherWind" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

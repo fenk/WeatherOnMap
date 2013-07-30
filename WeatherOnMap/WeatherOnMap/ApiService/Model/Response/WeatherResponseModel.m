@@ -8,6 +8,8 @@
 
 #import "WeatherResponseModel.h"
 #import "WeatherModel.h"
+#import "CDWeatherInfo.h"
+#import "AppDelegate.h"
 @implementation WeatherResponseModel
 
 @synthesize resultCountExpected = _resultCountExpected;
@@ -28,11 +30,36 @@
         for (id obj in list) {
             WeatherModel *weatherModel = [[[WeatherModel alloc] initWithDictionary:obj] autorelease];
             [weathers addObject:weatherModel];
+            
+            
+            NSManagedObjectContext *context = self.context;
+            
+            NSArray *objects = [CDObject fetchObjectsOfClass:[CDWeatherInfo class] sortedBy:nil filterString:[NSString stringWithFormat:@"lat == %f AND lon == %f", weatherModel.lat, weatherModel.lon]];
+            
+            if (objects == nil) {
+                CDWeatherInfo *info = [NSEntityDescription
+                                       insertNewObjectForEntityForName:@"CDWeatherInfo"
+                                       inManagedObjectContext:context];
+                
+                info.lat = weatherModel.lat;
+                info.lon = weatherModel.lon;
+                info.name = weatherModel.name;
+                
+            }else{
+
+            }
         }
+        
         self.list = [NSArray arrayWithArray:weathers];
+        
+        [[AppDelegate sharedDelegate] saveContext];
+        
+        
     }
     return self;
 }
+
+
 
 - (void)dealloc
 {

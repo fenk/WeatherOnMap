@@ -8,6 +8,7 @@
 
 #import "LiveBoxViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AnnotationButton.h"
 @interface LiveBoxViewController ()
 @property(nonatomic, retain) MKMapView *mapView;
 @end
@@ -19,10 +20,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        WeatherBoxRequestModel *weatherRequest = [[WeatherBoxRequestModel alloc] init];
+        weatherRequest.bbox = BBoxMake(CLLocationCoordinate2DMake(90,-180.0), CLLocationCoordinate2DMake(-90, 180));
+        [[WeatherOnMapService sharedInstance] getWeatherByBBox:weatherRequest withCaller:self];
+        [weatherRequest release];
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
@@ -33,9 +38,8 @@
     self.mapView.showsUserLocation = YES;
     [self.view addSubview:self.mapView];
 
-//    UIWebView *webview = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)] autorelease];
-//    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://openweathermap.org/help/tiles.html?opacity=0.6&l=wind"]]];
-//    [self.view addSubview:webview];
+
+    
 
 }
 
@@ -72,37 +76,40 @@
         return nil;
     }
     
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
     static NSString* weatherAnnotationIdentifier = @"weatherAnnotationIdentifier";
-    UIImageView *img = nil;
-    WeatherBoxAnnotation *annotationView = (WeatherBoxAnnotation *)[mapView dequeueReusableAnnotationViewWithIdentifier:weatherAnnotationIdentifier];
+    WeatherAnnotation *weatherAnnotation = (WeatherAnnotation*) annotation;
+    UIImageView *img = weatherAnnotation.weatherModel.weatherCondition.icon;
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:weatherAnnotationIdentifier];
     
     if (annotationView == nil)
     {
-        annotationView = [[[WeatherBoxAnnotation alloc] initWithAnnotation:annotation reuseIdentifier:weatherAnnotationIdentifier] autorelease];
-        WeatherBoxAnnotation *previousOne = (WeatherBoxAnnotation*) annotation;
-        annotationView.weatherBoxModel = previousOne.weatherBoxModel;
+        annotationView = [[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:weatherAnnotationIdentifier] autorelease];
+        
         annotationView.backgroundColor = [UIColor clearColor];
-        annotationView.layer.borderWidth = 1.0;
         annotationView.frame = CGRectMake(0, 0, 30, 30);
-        UIButton *annotationButton = [[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)] autorelease];
-        [annotationButton addTarget:self action:@selector(tapOnAnnotation:) forControlEvents:UIControlEventTouchUpInside];
-        annotationButton.backgroundColor = [UIColor clearColor];
-        [annotationView addSubview:annotationButton];
-        
-        
+        AnnotationButton *annotationButtonInfo = [[AnnotationButton alloc] initWithFrame:annotationView.frame];
+        annotationButtonInfo.model = weatherAnnotation;
+        [annotationButtonInfo addTarget:self action:@selector(tapOnAnnotation:) forControlEvents:UIControlEventTouchUpInside];
+        [annotationView addSubview:annotationButtonInfo];
     }
     
     annotationView.image = img.image;
+    annotationView.frame = CGRectMake(0, 0, 30, 30);
     annotationView.annotation = annotation;
     
     return annotationView;
+
 }
 
 - (void) tapOnAnnotation:(id) sender{
-    UIButton *button = sender;
-    WeatherBoxAnnotation *annotation = (WeatherBoxAnnotation*) button.superview;
+    AnnotationButton *button = (AnnotationButton*)sender;
+    WeatherAnnotation *annotation = (WeatherAnnotation*) button.model;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Details" message:annotation.weatherBoxModel.description delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Details" message:annotation.weatherModel.description delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil];
     [alert show
      ];
     [alert release];
@@ -113,14 +120,20 @@
 }
 - (void) didReceiveResponse:(BasicResponseModel*) basicResponse{
     CFAbsoluteTime timeC = CFAbsoluteTimeGetCurrent();
-    WeatherBoxResponseModel *response = (WeatherBoxResponseModel*) basicResponse;
+    WeatherResponseModel *response = (WeatherResponseModel*) basicResponse;
+    DebugLog(@"%d", response.list.count);
+
+    time_t unixTime = (time_t) [[NSDate date] timeIntervalSince1970];
+
     
     NSMutableArray *annotations = [NSMutableArray array];
-    for (WeatherBoxModel *model in response.list) {
-        if ([[WeatherCurrentCache sharedInstance] addWeatherBoxModel:model]){
-            WeatherBoxAnnotation *annotation = [[[WeatherBoxAnnotation alloc] init] autorelease];
+    for (WeatherModel *model in response.list) {
+        NSLog(@"%ld minutes",(long)(unixTime - model.dt)/60);
+
+        if ([[WeatherCurrentCache sharedInstance] addWeatherModel:model]){
+            WeatherAnnotation *annotation = [[[WeatherAnnotation alloc] init] autorelease];
             [annotation setCoordinate:CLLocationCoordinate2DMake(model.lat, model.lon)];
-            annotation.weatherBoxModel = model;
+            annotation.weatherModel = model;
             [annotations addObject:annotation];
         }
     }

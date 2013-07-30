@@ -7,6 +7,7 @@
 //
 
 #import "BasicResponseModel.h"
+#import "AppDelegate.h"
 
 @implementation BasicResponseModel
 @synthesize resultCountExpected = _resultCountExpected;
@@ -14,6 +15,15 @@
 @synthesize list = _list;
 @synthesize message = _message;
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.context = [[AppDelegate sharedDelegate] managedObjectContext];
+
+    }
+    return self;
+}
 - (id) initWithDictionary:(NSDictionary*) params{
     self = [super init];
     if (self) {
